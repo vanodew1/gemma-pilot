@@ -45,7 +45,7 @@ Real GitHub issues from SWE-bench (`princeton-nlp/SWE-bench`, test split). There
 - **B1, BM25** is the retrieval baseline from the SWE-bench paper (Jimenez et al., 2024). It treats the issue as a bag of words and the agent reads whole files.
 - **K1 + retry clues** stands in for loop (B). It adds the failing test's code to the query, which is what the agent would see after a failed test run.
 
-- **K2** asks Gemma 4 12B, running locally through Ollama, to list what to search for. It sees the issue and the repo's file list, and nothing else. Its keywords then go through the same ranking as K1. The replies are cached in `data/gemma_keywords.json`, so reruns need no GPU. Run with `python run.py --gemma`.
+- **K2** asks Gemma 4 12B, running locally through Ollama, to list what to search for. It sees the issue and the repo's file list, and nothing else. Its keywords then go through the same ranking as K1. The replies are cached in `data/gemma_keywords.json`, so reruns need no GPU. Run with `.venvScriptspython run.py --gemma`.
 
 **Reading it:**
 - **Gemma picking the search terms is the best method: 80% right file first,** against 69% for the rules and 58% for BM25. It fixes the cases where a big central file wins (3 of the 4 flask misses), because it names the specific function to look for instead of every word in the issue.
@@ -70,17 +70,16 @@ K1 misses Hit@1 on 17 of 55 issues. The main patterns:
 2. **The issue describes only a symptom.** `psf__requests-6028` ("Proxy authentication bug") reports an HTTP 407 on Python 3.8.12. The fix is in `utils.py`, and nothing in the issue points there. Finding it needs reasoning about the cause, which is where the model comes in.
 3. **The fix adds code that doesn't exist yet.** In `psf__requests-4356` (a misleading exception for a malformed `https_proxy`), the fix adds a new `InvalidProxyURL` class to `exceptions.py`. A search of the code before the fix can't match a class that hasn't been written.
 
-Run `python run.py --trace <id>` on any of these to show why it missed.
+Run `.venvScriptspython run.py --trace <id>` on any of these to show why it missed.
 
 ## Demo script (Monday)
 
 ```powershell
 cd "D:\AI Project\pilot"
-.venv\Scripts\activate
-python run.py --trace psf__requests-2317   # 1. one issue end to end (a win)
-python run.py --trace pallets__flask-4045  # 2. a miss: hub file app.py beats blueprints.py
+.venvScriptspython run.py --trace psf__requests-2317   # 1. one issue end to end (a win)
+.venvScriptspython run.py --trace pallets__flask-4045  # 2. a miss: hub file app.py beats blueprints.py
 type results\results.md                   # 3. the results table
-python -m pytest -q                        # 4. unit tests for the method
+.venvScriptspython -m pytest -q                        # 4. unit tests for the method
 ```
 
 The trace prints five steps:
@@ -105,5 +104,5 @@ python -m venv .venv; .venv\Scripts\pip install datasets rank_bm25 "pytest==8.3.
 git clone https://github.com/psf/requests repos/requests
 git clone https://github.com/pallets/flask repos/flask
 # data/instances.jsonl: SWE-bench test split filtered to psf/requests + pallets/flask
-python run.py
+.venvScriptspython run.py
 ```
