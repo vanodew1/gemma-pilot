@@ -1,4 +1,4 @@
-from pilot import Keyword, extract_keywords, gold_files, hit_at_k, rank_files, recall_at_k
+from pilot import Keyword, extract_keywords, gold_files, hit_at_k, parse_llm_keywords, rank_files, recall_at_k
 
 ISSUE = '''Calling `requests.get` with allow_redirects=False raises InvalidURL.
 
@@ -110,3 +110,32 @@ def test_the_file_that_defines_an_identifier_beats_files_that_only_use_it():
     }
     ranked = rank_files([kw("register_blueprint", "ident")], files)
     assert ranked[0][0] == "blueprints.py"
+
+
+def test_llm_reply_becomes_typed_keywords():
+    reply = '''Here you go:
+```json
+["src/requests/sessions.py", "rebuild_auth", "Proxy-Authorization", "Failed to parse URL", "rebuild_auth", "the"]
+```'''
+    assert parse_llm_keywords(reply) == [
+        Keyword("requests/sessions.py", "path"),
+        Keyword("rebuild_auth", "ident"),
+        Keyword("Proxy-Authorization", "ident"),
+        Keyword("Failed to parse URL", "error"),
+    ]
+
+
+def test_unparseable_llm_reply_gives_no_keywords():
+    assert parse_llm_keywords("Sorry, I can't help with that.") == []
+
+
+def test_broken_json_still_yields_the_quoted_strings():
+    reply = '```json\n["rebuild_auth", "bad \x83 escape", "resolve_redirects"]\n```\nI\'ll [explain]'
+    terms = {k.term for k in parse_llm_keywords(reply)}
+    assert {"rebuild_auth", "resolve_redirects"} <= terms
+
+
+def test_dotted_names_from_the_llm_are_split_like_the_rules_do():
+    terms = {(k.term, k.kind) for k in parse_llm_keywords('["requests.sessions.Session.resolve_redirects"]')}
+    assert {("Session", "ident"), ("resolve_redirects", "ident"), ("sessions", "ident")} <= terms
+    assert not any("." in t for t, _ in terms)

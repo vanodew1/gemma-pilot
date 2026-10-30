@@ -4,6 +4,7 @@ Given only an issue's text, rank the repo's files so the file(s) the real fix
 touched land near the top. This is step (A) of the proposed agent: search the
 repo with keywords from the issue, then open only the matching files.
 """
+import json
 import math
 import re
 from dataclasses import dataclass
@@ -170,3 +171,40 @@ def hit_at_k(ranked, gold, k):
 def recall_at_k(ranked, gold, k):
     """Share of gold files found among the top k ranked files."""
     return len(set(ranked[:k]) & gold) / len(gold)
+
+
+def parse_llm_keywords(reply):
+    """Turn a model's reply (a JSON list of strings, maybe in a code fence) into Keywords.
+
+    Kind comes from the string's shape: `.py` paths, multi-word error text, or
+    identifiers; dotted names are split into their parts, as `extract_keywords` does.
+    If the list isn't valid JSON (bad escapes, trailing chatter), the quoted strings
+    inside it are used. Returns [] if the reply holds no list.
+    """
+    start = reply.find("[")
+    if start < 0:
+        return []
+    end = reply.find("]", start)
+    body = reply[start:end + 1] if end > 0 else reply[start:]
+    try:
+        terms = json.loads(body)
+    except json.JSONDecodeError:
+        terms = re.findall(r'"([^"\n]*)"', body)
+    found = {}
+
+    def add(term, kind):
+        if len(term) >= 3 and term.lower() not in STOPWORDS:
+            found.setdefault(term, kind)
+
+    for term in terms:
+        if not isinstance(term, str):
+            continue
+        term = term.strip()
+        if term.endswith(".py"):
+            add(_repo_relative(term), "path")
+        elif " " in term:
+            add(term, "error")
+        else:
+            for part in term.split("."):
+                add(part, "ident")
+    return [Keyword(t, k) for t, k in found.items()]

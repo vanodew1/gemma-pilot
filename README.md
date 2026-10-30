@@ -39,11 +39,17 @@ Real GitHub issues from SWE-bench (`princeton-nlp/SWE-bench`, test split). There
 | K0 keyword search, no def bonus | 65% | 91% | 98% | 93% | 1,082 |
 | **K1 keyword search** | **69%** | 91% | 98% | 93% | **1,079** |
 | K1 + retry clues | 69% | **96%** | 98% | 94% | 1,402 |
+| **K2 Gemma 4 12B keywords** | **80%** | 93% | 96% | 90% | 1,030 |
+| K1 + K2 merged | 73% | 91% | 95% | 89% | 1,212 |
 
 - **B1, BM25** is the retrieval baseline from the SWE-bench paper (Jimenez et al., 2024). It treats the issue as a bag of words and the agent reads whole files.
 - **K1 + retry clues** stands in for loop (B). It adds the failing test's code to the query, which is what the agent would see after a failed test run.
 
+- **K2** asks Gemma 4 12B, running locally through Ollama, to list what to search for. It sees the issue and the repo's file list, and nothing else. Its keywords then go through the same ranking as K1. The replies are cached in `data/gemma_keywords.json`, so reruns need no GPU. Run with `python run.py --gemma`.
+
 **Reading it:**
+- **Gemma picking the search terms is the best method: 80% right file first,** against 69% for the rules and 58% for BM25. It fixes the cases where a big central file wins (3 of the 4 flask misses), because it names the specific function to look for instead of every word in the issue.
+- Merging the rules' keywords into Gemma's makes it *worse* (73%), because the rules' plain words add noise. A better merge, for example taking only the rules' code names, is a next step.
 - Keyword search puts the right file **first** 69% of the time, against 58% for BM25. The model reads about **⅓ as many lines** (1,079 vs 2,999), because it opens windows instead of whole files.
 - The definition bonus is worth +4 points at Hit@1.
 - Retry clues push Hit@3 from 91% to 96%. This is early evidence for the proposal's claim that searching again with error text helps.
@@ -51,7 +57,7 @@ Real GitHub issues from SWE-bench (`princeton-nlp/SWE-bench`, test split). There
 **Caveats to state honestly:**
 - These repos are small (about 17 files), so top 5 is easy even by chance: random gets 35%. **Hit@1 is the number that matters.**
 - 55 issues is small. One issue is about 1.8 points.
-- The rules were tuned by looking at these same issues; there is no held-out set yet. The next step is to freeze the rules and test on new issues from httpx or fastapi.
+- The rules were tuned by looking at these same issues; there is no held-out set yet. The same goes for two K2 parser fixes: splitting dotted names like `requests.sessions.Session.send` into their parts, and reading broken JSON. Before those fixes K2 scored 69%. Both are bug fixes applied to every issue, not per-issue tuning, but they were found on this data. The next step is to freeze the rules and test on new issues from httpx or fastapi.
 
 ## Failure analysis
 
@@ -88,7 +94,7 @@ The trace prints five steps:
 
 ## Next steps
 
-- **K2:** ask local Gemma 4 12B (via Ollama) for extra keywords and merge them with K1. This needs `ollama pull gemma4:12b`.
+- Merge K1 and K2 properly. Before the Gemma parser fixes below, each method got 6 issues right that the other missed, so a good merge could do better than either.
 - Reduce hub-file bias, for example by normalising by file length or preferring definitions more strongly.
 - Run on a held-out set: issues from httpx and fastapi, the other competition dev-set repos.
 

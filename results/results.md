@@ -9,3 +9,5 @@
 | K0 keyword search, no def bonus | 65% | 91% | 98% | 93% | 1,082 |
 | K1 keyword search | 69% | 91% | 98% | 93% | 1,079 |
 | K1 + retry clues | 69% | 96% | 98% | 94% | 1,402 |
+| K2 Gemma keywords only | 80% | 93% | 96% | 90% | 1,030 |
+| K1 + K2 Gemma keywords | 73% | 91% | 95% | 89% | 1,212 |

@@ -4,273 +4,383 @@ pallets__flask-4045,B1 BM25 (whole files),22,src/flask/blueprints.py,src/flask/h
 pallets__flask-4045,"K0 keyword search, no def bonus",22,src/flask/blueprints.py,src/flask/app.py src/flask/blueprints.py src/flask/scaffold.py src/flask/helpers.py src/flask/cli.py,2084,0,1,1,1.0
 pallets__flask-4045,K1 keyword search,22,src/flask/blueprints.py,src/flask/app.py src/flask/blueprints.py src/flask/scaffold.py src/flask/helpers.py src/flask/cli.py,2084,0,1,1,1.0
 pallets__flask-4045,K1 + retry clues,22,src/flask/blueprints.py,src/flask/app.py src/flask/scaffold.py src/flask/blueprints.py src/flask/helpers.py src/flask/views.py,1808,0,1,1,1.0
+pallets__flask-4045,K2 Gemma keywords only,22,src/flask/blueprints.py,src/flask/blueprints.py src/flask/app.py src/flask/scaffold.py src/flask/helpers.py src/flask/wrappers.py,1594,1,1,1,1.0
+pallets__flask-4045,K1 + K2 Gemma keywords,22,src/flask/blueprints.py,src/flask/blueprints.py src/flask/app.py src/flask/scaffold.py src/flask/helpers.py src/flask/cli.py,478,1,1,1,1.0
 pallets__flask-4074,B0 random,22,src/flask/app.py src/flask/blueprints.py src/flask/helpers.py src/flask/wrappers.py,src/flask/scaffold.py src/flask/signals.py src/flask/json/tag.py src/flask/sessions.py src/flask/cli.py,2635,0,0,0,0.0
 pallets__flask-4074,B1 BM25 (whole files),22,src/flask/app.py src/flask/blueprints.py src/flask/helpers.py src/flask/wrappers.py,src/flask/app.py src/flask/blueprints.py src/flask/helpers.py src/flask/json/__init__.py src/flask/ctx.py,4307,1,1,1,0.75
 pallets__flask-4074,"K0 keyword search, no def bonus",22,src/flask/app.py src/flask/blueprints.py src/flask/helpers.py src/flask/wrappers.py,src/flask/app.py src/flask/blueprints.py src/flask/helpers.py src/flask/scaffold.py src/flask/ctx.py,1458,1,1,1,0.75
 pallets__flask-4074,K1 keyword search,22,src/flask/app.py src/flask/blueprints.py src/flask/helpers.py src/flask/wrappers.py,src/flask/app.py src/flask/blueprints.py src/flask/helpers.py src/flask/scaffold.py src/flask/ctx.py,1458,1,1,1,0.75
 pallets__flask-4074,K1 + retry clues,22,src/flask/app.py src/flask/blueprints.py src/flask/helpers.py src/flask/wrappers.py,src/flask/app.py src/flask/blueprints.py src/flask/scaffold.py src/flask/helpers.py src/flask/ctx.py,2501,1,1,1,0.75
+pallets__flask-4074,K2 Gemma keywords only,22,src/flask/app.py src/flask/blueprints.py src/flask/helpers.py src/flask/wrappers.py,src/flask/blueprints.py src/flask/app.py src/flask/helpers.py src/flask/ctx.py src/flask/scaffold.py,1336,1,1,1,0.75
+pallets__flask-4074,K1 + K2 Gemma keywords,22,src/flask/app.py src/flask/blueprints.py src/flask/helpers.py src/flask/wrappers.py,src/flask/app.py src/flask/blueprints.py src/flask/helpers.py src/flask/scaffold.py src/flask/ctx.py,1512,1,1,1,0.75
 pallets__flask-4160,B0 random,22,src/flask/json/__init__.py,src/flask/cli.py src/flask/json/tag.py src/flask/config.py src/flask/signals.py src/flask/sessions.py,2066,0,0,0,0.0
 pallets__flask-4160,B1 BM25 (whole files),22,src/flask/json/__init__.py,src/flask/json/__init__.py src/flask/cli.py src/flask/app.py src/flask/sessions.py src/flask/scaffold.py,4721,1,1,1,1.0
 pallets__flask-4160,"K0 keyword search, no def bonus",22,src/flask/json/__init__.py,src/flask/app.py src/flask/json/__init__.py src/flask/cli.py src/flask/scaffold.py src/flask/helpers.py,1350,0,1,1,1.0
 pallets__flask-4160,K1 keyword search,22,src/flask/json/__init__.py,src/flask/json/__init__.py src/flask/app.py src/flask/cli.py src/flask/scaffold.py src/flask/json/tag.py,1318,1,1,1,1.0
 pallets__flask-4160,K1 + retry clues,22,src/flask/json/__init__.py,src/flask/json/__init__.py src/flask/app.py src/flask/cli.py src/flask/scaffold.py src/flask/json/tag.py,1318,1,1,1,1.0
+pallets__flask-4160,K2 Gemma keywords only,22,src/flask/json/__init__.py,src/flask/json/__init__.py src/flask/app.py src/flask/json/tag.py src/flask/sessions.py src/flask/scaffold.py,1356,1,1,1,1.0
+pallets__flask-4160,K1 + K2 Gemma keywords,22,src/flask/json/__init__.py,src/flask/json/__init__.py src/flask/app.py src/flask/cli.py src/flask/json/tag.py src/flask/scaffold.py,1318,1,1,1,1.0
 pallets__flask-4169,B0 random,22,src/flask/cli.py,src/flask/blueprints.py src/flask/globals.py src/flask/ctx.py src/flask/sessions.py src/flask/signals.py,1613,0,0,0,0.0
 pallets__flask-4169,B1 BM25 (whole files),22,src/flask/cli.py,src/flask/cli.py src/flask/scaffold.py src/flask/app.py src/flask/helpers.py src/flask/ctx.py,5283,1,1,1,1.0
 pallets__flask-4169,"K0 keyword search, no def bonus",22,src/flask/cli.py,src/flask/cli.py src/flask/app.py src/flask/ctx.py src/flask/helpers.py src/flask/testing.py,823,1,1,1,1.0
 pallets__flask-4169,K1 keyword search,22,src/flask/cli.py,src/flask/cli.py src/flask/app.py src/flask/ctx.py src/flask/helpers.py src/flask/typing.py,777,1,1,1,1.0
 pallets__flask-4169,K1 + retry clues,22,src/flask/cli.py,src/flask/cli.py src/flask/app.py src/flask/testing.py src/flask/ctx.py src/flask/helpers.py,1227,1,1,1,1.0
+pallets__flask-4169,K2 Gemma keywords only,22,src/flask/cli.py,src/flask/cli.py src/flask/app.py src/flask/ctx.py src/flask/helpers.py src/flask/testing.py,578,1,1,1,1.0
+pallets__flask-4169,K1 + K2 Gemma keywords,22,src/flask/cli.py,src/flask/cli.py src/flask/app.py src/flask/ctx.py src/flask/helpers.py src/flask/typing.py,777,1,1,1,1.0
 pallets__flask-4544,B0 random,22,src/flask/cli.py,src/flask/signals.py src/flask/logging.py src/flask/debughelpers.py src/flask/typing.py src/flask/globals.py,423,0,0,0,0.0
 pallets__flask-4544,B1 BM25 (whole files),22,src/flask/cli.py,src/flask/cli.py src/flask/app.py src/flask/helpers.py src/flask/scaffold.py src/flask/debughelpers.py,4922,1,1,1,1.0
 pallets__flask-4544,"K0 keyword search, no def bonus",22,src/flask/cli.py,src/flask/cli.py src/flask/app.py src/flask/scaffold.py src/flask/helpers.py src/flask/config.py,1097,1,1,1,1.0
 pallets__flask-4544,K1 keyword search,22,src/flask/cli.py,src/flask/cli.py src/flask/app.py src/flask/scaffold.py src/flask/helpers.py src/flask/config.py,1097,1,1,1,1.0
 pallets__flask-4544,K1 + retry clues,22,src/flask/cli.py,src/flask/cli.py src/flask/app.py src/flask/scaffold.py src/flask/helpers.py src/flask/config.py,1347,1,1,1,1.0
+pallets__flask-4544,K2 Gemma keywords only,22,src/flask/cli.py,src/flask/cli.py src/flask/app.py src/flask/scaffold.py src/flask/blueprints.py src/flask/json/tag.py,1142,1,1,1,1.0
+pallets__flask-4544,K1 + K2 Gemma keywords,22,src/flask/cli.py,src/flask/cli.py src/flask/app.py src/flask/scaffold.py src/flask/helpers.py src/flask/config.py,1145,1,1,1,1.0
 pallets__flask-4575,B0 random,22,src/flask/__init__.py src/flask/app.py src/flask/helpers.py,src/flask/__init__.py src/flask/__main__.py src/flask/json/__init__.py src/flask/logging.py src/flask/signals.py,486,1,1,1,0.333
 pallets__flask-4575,B1 BM25 (whole files),22,src/flask/__init__.py src/flask/app.py src/flask/helpers.py,src/flask/debughelpers.py src/flask/app.py src/flask/json/__init__.py src/flask/cli.py src/flask/scaffold.py,4441,0,1,1,0.333
 pallets__flask-4575,"K0 keyword search, no def bonus",22,src/flask/__init__.py src/flask/app.py src/flask/helpers.py,src/flask/app.py src/flask/json/__init__.py src/flask/scaffold.py src/flask/cli.py src/flask/helpers.py,1152,1,1,1,0.667
 pallets__flask-4575,K1 keyword search,22,src/flask/__init__.py src/flask/app.py src/flask/helpers.py,src/flask/app.py src/flask/json/__init__.py src/flask/scaffold.py src/flask/cli.py src/flask/helpers.py,1152,1,1,1,0.667
 pallets__flask-4575,K1 + retry clues,22,src/flask/__init__.py src/flask/app.py src/flask/helpers.py,src/flask/app.py src/flask/json/__init__.py src/flask/scaffold.py src/flask/cli.py src/flask/helpers.py,1625,1,1,1,0.667
+pallets__flask-4575,K2 Gemma keywords only,22,src/flask/__init__.py src/flask/app.py src/flask/helpers.py,src/flask/app.py src/flask/helpers.py src/flask/ctx.py src/flask/cli.py src/flask/json/__init__.py,1378,1,1,1,0.667
+pallets__flask-4575,K1 + K2 Gemma keywords,22,src/flask/__init__.py src/flask/app.py src/flask/helpers.py,src/flask/app.py src/flask/json/__init__.py src/flask/ctx.py src/flask/helpers.py src/flask/cli.py,1632,1,1,1,0.667
 pallets__flask-4642,B0 random,22,src/flask/app.py src/flask/cli.py src/flask/debughelpers.py,src/flask/testing.py src/flask/globals.py src/flask/logging.py src/flask/sessions.py src/flask/views.py,1030,0,0,0,0.0
 pallets__flask-4642,B1 BM25 (whole files),22,src/flask/app.py src/flask/cli.py src/flask/debughelpers.py,src/flask/cli.py src/flask/app.py src/flask/testing.py src/flask/scaffold.py src/flask/helpers.py,5213,1,1,1,0.667
 pallets__flask-4642,"K0 keyword search, no def bonus",22,src/flask/app.py src/flask/cli.py src/flask/debughelpers.py,src/flask/cli.py src/flask/app.py src/flask/helpers.py src/flask/scaffold.py src/flask/testing.py,1824,1,1,1,0.667
 pallets__flask-4642,K1 keyword search,22,src/flask/app.py src/flask/cli.py src/flask/debughelpers.py,src/flask/cli.py src/flask/app.py src/flask/helpers.py src/flask/scaffold.py src/flask/testing.py,1824,1,1,1,0.667
 pallets__flask-4642,K1 + retry clues,22,src/flask/app.py src/flask/cli.py src/flask/debughelpers.py,src/flask/cli.py src/flask/app.py src/flask/helpers.py src/flask/testing.py src/flask/blueprints.py,2459,1,1,1,0.667
+pallets__flask-4642,K2 Gemma keywords only,22,src/flask/app.py src/flask/cli.py src/flask/debughelpers.py,src/flask/cli.py src/flask/app.py src/flask/testing.py src/flask/scaffold.py src/flask/templating.py,949,1,1,1,0.667
+pallets__flask-4642,K1 + K2 Gemma keywords,22,src/flask/app.py src/flask/cli.py src/flask/debughelpers.py,src/flask/cli.py src/flask/app.py src/flask/helpers.py src/flask/scaffold.py src/flask/testing.py,1905,1,1,1,0.667
 pallets__flask-4935,B0 random,23,src/flask/blueprints.py,src/flask/helpers.py src/flask/ctx.py src/flask/cli.py src/flask/wrappers.py src/flask/typing.py,2453,0,0,0,0.0
 pallets__flask-4935,B1 BM25 (whole files),23,src/flask/blueprints.py,src/flask/helpers.py src/flask/cli.py src/flask/app.py src/flask/scaffold.py src/flask/blueprints.py,5919,0,0,1,1.0
 pallets__flask-4935,"K0 keyword search, no def bonus",23,src/flask/blueprints.py,src/flask/app.py src/flask/blueprints.py src/flask/cli.py src/flask/scaffold.py src/flask/sessions.py,2497,0,1,1,1.0
 pallets__flask-4935,K1 keyword search,23,src/flask/blueprints.py,src/flask/app.py src/flask/blueprints.py src/flask/scaffold.py src/flask/cli.py src/flask/sessions.py,2497,0,1,1,1.0
 pallets__flask-4935,K1 + retry clues,23,src/flask/blueprints.py,src/flask/app.py src/flask/blueprints.py src/flask/scaffold.py src/flask/cli.py src/flask/sessions.py,2692,0,1,1,1.0
+pallets__flask-4935,K2 Gemma keywords only,23,src/flask/blueprints.py,src/flask/blueprints.py src/flask/app.py src/flask/testing.py src/flask/scaffold.py src/flask/cli.py,555,1,1,1,1.0
+pallets__flask-4935,K1 + K2 Gemma keywords,23,src/flask/blueprints.py,src/flask/app.py src/flask/blueprints.py src/flask/scaffold.py src/flask/cli.py src/flask/sessions.py,2505,0,1,1,1.0
 pallets__flask-4992,B0 random,22,src/flask/config.py,src/flask/config.py src/flask/debughelpers.py src/flask/sessions.py src/flask/cli.py src/flask/logging.py,2048,1,1,1,1.0
 pallets__flask-4992,B1 BM25 (whole files),22,src/flask/config.py,src/flask/config.py src/flask/app.py src/flask/helpers.py src/flask/cli.py src/flask/scaffold.py,5229,1,1,1,1.0
 pallets__flask-4992,"K0 keyword search, no def bonus",22,src/flask/config.py,src/flask/app.py src/flask/config.py src/flask/scaffold.py src/flask/cli.py src/flask/helpers.py,2396,0,1,1,1.0
 pallets__flask-4992,K1 keyword search,22,src/flask/config.py,src/flask/config.py src/flask/app.py src/flask/cli.py src/flask/scaffold.py src/flask/helpers.py,2396,1,1,1,1.0
 pallets__flask-4992,K1 + retry clues,22,src/flask/config.py,src/flask/config.py src/flask/app.py src/flask/scaffold.py src/flask/helpers.py src/flask/cli.py,2767,1,1,1,1.0
+pallets__flask-4992,K2 Gemma keywords only,22,src/flask/config.py,src/flask/config.py src/flask/app.py src/flask/scaffold.py src/flask/testing.py src/flask/cli.py,682,1,1,1,1.0
+pallets__flask-4992,K1 + K2 Gemma keywords,22,src/flask/config.py,src/flask/config.py src/flask/app.py src/flask/cli.py src/flask/scaffold.py src/flask/helpers.py,2396,1,1,1,1.0
 pallets__flask-5014,B0 random,22,src/flask/blueprints.py,src/flask/scaffold.py src/flask/typing.py src/flask/json/provider.py src/flask/cli.py src/flask/__main__.py,2279,0,0,0,0.0
 pallets__flask-5014,B1 BM25 (whole files),22,src/flask/blueprints.py,src/flask/app.py src/flask/sessions.py src/flask/helpers.py src/flask/scaffold.py src/flask/wrappers.py,4428,0,0,0,0.0
 pallets__flask-5014,"K0 keyword search, no def bonus",22,src/flask/blueprints.py,src/flask/app.py src/flask/blueprints.py src/flask/scaffold.py src/flask/helpers.py src/flask/wrappers.py,268,0,1,1,1.0
 pallets__flask-5014,K1 keyword search,22,src/flask/blueprints.py,src/flask/app.py src/flask/blueprints.py src/flask/scaffold.py src/flask/helpers.py src/flask/wrappers.py,268,0,1,1,1.0
 pallets__flask-5014,K1 + retry clues,22,src/flask/blueprints.py,src/flask/app.py src/flask/blueprints.py src/flask/scaffold.py src/flask/helpers.py src/flask/cli.py,1070,0,1,1,1.0
+pallets__flask-5014,K2 Gemma keywords only,22,src/flask/blueprints.py,src/flask/blueprints.py src/flask/app.py src/flask/scaffold.py src/flask/cli.py src/flask/helpers.py,1607,1,1,1,1.0
+pallets__flask-5014,K1 + K2 Gemma keywords,22,src/flask/blueprints.py,src/flask/blueprints.py src/flask/app.py src/flask/scaffold.py src/flask/helpers.py src/flask/cli.py,749,1,1,1,1.0
 pallets__flask-5063,B0 random,22,src/flask/cli.py,src/flask/scaffold.py src/flask/testing.py src/flask/templating.py src/flask/cli.py src/flask/json/provider.py,2706,0,0,1,1.0
 pallets__flask-5063,B1 BM25 (whole files),22,src/flask/cli.py,src/flask/app.py src/flask/blueprints.py src/flask/cli.py src/flask/helpers.py src/flask/scaffold.py,5530,0,1,1,1.0
 pallets__flask-5063,"K0 keyword search, no def bonus",22,src/flask/cli.py,src/flask/app.py src/flask/blueprints.py src/flask/cli.py src/flask/scaffold.py src/flask/testing.py,1602,0,1,1,1.0
 pallets__flask-5063,K1 keyword search,22,src/flask/cli.py,src/flask/app.py src/flask/blueprints.py src/flask/cli.py src/flask/scaffold.py src/flask/testing.py,1602,0,1,1,1.0
 pallets__flask-5063,K1 + retry clues,22,src/flask/cli.py,src/flask/app.py src/flask/cli.py src/flask/blueprints.py src/flask/scaffold.py src/flask/testing.py,1837,0,1,1,1.0
+pallets__flask-5063,K2 Gemma keywords only,22,src/flask/cli.py,src/flask/app.py src/flask/blueprints.py src/flask/cli.py src/flask/testing.py src/flask/sessions.py,575,0,1,1,1.0
+pallets__flask-5063,K1 + K2 Gemma keywords,22,src/flask/cli.py,src/flask/app.py src/flask/blueprints.py src/flask/cli.py src/flask/scaffold.py src/flask/helpers.py,1533,0,1,1,1.0
 psf__requests-1142,B0 random,16,requests/models.py,requests/structures.py requests/hooks.py setup.py requests/auth.py requests/certs.py,390,0,0,0,0.0
 psf__requests-1142,B1 BM25 (whole files),16,requests/models.py,requests/models.py requests/adapters.py requests/utils.py requests/cookies.py requests/sessions.py,2246,1,1,1,1.0
 psf__requests-1142,"K0 keyword search, no def bonus",16,requests/models.py,requests/models.py requests/sessions.py requests/cookies.py requests/api.py requests/adapters.py,717,1,1,1,1.0
 psf__requests-1142,K1 keyword search,16,requests/models.py,requests/models.py requests/sessions.py requests/api.py requests/cookies.py requests/adapters.py,717,1,1,1,1.0
 psf__requests-1142,K1 + retry clues,16,requests/models.py,requests/models.py requests/sessions.py requests/api.py requests/cookies.py requests/adapters.py,986,1,1,1,1.0
+psf__requests-1142,K2 Gemma keywords only,16,requests/models.py,requests/models.py requests/sessions.py requests/exceptions.py requests/api.py requests/adapters.py,857,1,1,1,1.0
+psf__requests-1142,K1 + K2 Gemma keywords,16,requests/models.py,requests/models.py requests/sessions.py requests/api.py requests/adapters.py requests/cookies.py,1087,1,1,1,1.0
 psf__requests-1327,B0 random,18,requests/sessions.py,requests/certs.py tasks.py requests/adapters.py requests/structures.py requests/hooks.py,567,0,0,0,0.0
 psf__requests-1327,B1 BM25 (whole files),18,requests/sessions.py,requests/sessions.py requests/adapters.py requests/utils.py requests/cookies.py requests/models.py,2458,1,1,1,1.0
 psf__requests-1327,"K0 keyword search, no def bonus",18,requests/sessions.py,requests/sessions.py requests/adapters.py requests/models.py requests/utils.py requests/cookies.py,801,1,1,1,1.0
 psf__requests-1327,K1 keyword search,18,requests/sessions.py,requests/sessions.py requests/adapters.py requests/models.py requests/utils.py tasks.py,710,1,1,1,1.0
 psf__requests-1327,K1 + retry clues,18,requests/sessions.py,requests/sessions.py requests/adapters.py requests/models.py requests/utils.py tasks.py,710,1,1,1,1.0
+psf__requests-1327,K2 Gemma keywords only,18,requests/sessions.py,requests/sessions.py requests/adapters.py requests/__init__.py requests/models.py setup.py,529,1,1,1,1.0
+psf__requests-1327,K1 + K2 Gemma keywords,18,requests/sessions.py,requests/sessions.py requests/adapters.py requests/models.py requests/utils.py tasks.py,710,1,1,1,1.0
 psf__requests-1339,B0 random,18,requests/structures.py requests/utils.py,requests/compat.py requests/status_codes.py requests/exceptions.py requests/hooks.py requests/certs.py,329,0,0,0,0.0
 psf__requests-1339,B1 BM25 (whole files),18,requests/structures.py requests/utils.py,requests/models.py requests/cookies.py requests/utils.py requests/structures.py requests/adapters.py,2041,0,1,1,1.0
 psf__requests-1339,"K0 keyword search, no def bonus",18,requests/structures.py requests/utils.py,requests/structures.py requests/models.py requests/sessions.py requests/cookies.py requests/utils.py,712,1,1,1,1.0
 psf__requests-1339,K1 keyword search,18,requests/structures.py requests/utils.py,requests/structures.py requests/cookies.py requests/models.py requests/sessions.py requests/utils.py,712,1,1,1,1.0
 psf__requests-1339,K1 + retry clues,18,requests/structures.py requests/utils.py,requests/cookies.py requests/sessions.py requests/structures.py requests/models.py requests/utils.py,1506,0,1,1,1.0
+psf__requests-1339,K2 Gemma keywords only,18,requests/structures.py requests/utils.py,requests/structures.py requests/cookies.py requests/models.py requests/sessions.py requests/utils.py,493,1,1,1,1.0
+psf__requests-1339,K1 + K2 Gemma keywords,18,requests/structures.py requests/utils.py,requests/structures.py requests/cookies.py requests/sessions.py requests/models.py requests/utils.py,712,1,1,1,1.0
 psf__requests-1376,B0 random,18,requests/models.py,requests/hooks.py requests/structures.py requests/api.py requests/auth.py requests/adapters.py,817,0,0,0,0.0
 psf__requests-1376,B1 BM25 (whole files),18,requests/models.py,requests/sessions.py requests/models.py requests/api.py requests/__init__.py requests/adapters.py,1731,0,1,1,1.0
 psf__requests-1376,"K0 keyword search, no def bonus",18,requests/models.py,requests/models.py requests/sessions.py requests/api.py requests/cookies.py requests/adapters.py,833,1,1,1,1.0
 psf__requests-1376,K1 keyword search,18,requests/models.py,requests/models.py requests/sessions.py requests/api.py requests/cookies.py requests/adapters.py,833,1,1,1,1.0
 psf__requests-1376,K1 + retry clues,18,requests/models.py,requests/models.py requests/sessions.py requests/exceptions.py requests/api.py requests/cookies.py,1039,1,1,1,1.0
+psf__requests-1376,K2 Gemma keywords only,18,requests/models.py,requests/models.py requests/sessions.py requests/api.py requests/adapters.py requests/auth.py,910,1,1,1,1.0
+psf__requests-1376,K1 + K2 Gemma keywords,18,requests/models.py,requests/models.py requests/sessions.py requests/api.py requests/adapters.py requests/auth.py,910,1,1,1,1.0
 psf__requests-1537,B0 random,17,requests/models.py,requests/cookies.py requests/exceptions.py tasks.py requests/auth.py requests/status_codes.py,767,0,0,0,0.0
 psf__requests-1537,B1 BM25 (whole files),17,requests/models.py,requests/models.py requests/sessions.py requests/api.py requests/__init__.py requests/adapters.py,1816,1,1,1,1.0
 psf__requests-1537,"K0 keyword search, no def bonus",17,requests/models.py,requests/models.py requests/sessions.py requests/api.py requests/adapters.py requests/cookies.py,1428,1,1,1,1.0
 psf__requests-1537,K1 keyword search,17,requests/models.py,requests/models.py requests/sessions.py requests/api.py requests/adapters.py requests/cookies.py,1428,1,1,1,1.0
 psf__requests-1537,K1 + retry clues,17,requests/models.py,requests/models.py requests/sessions.py requests/api.py requests/cookies.py requests/adapters.py,1545,1,1,1,1.0
+psf__requests-1537,K2 Gemma keywords only,17,requests/models.py,requests/models.py requests/sessions.py requests/adapters.py requests/api.py,395,1,1,1,1.0
+psf__requests-1537,K1 + K2 Gemma keywords,17,requests/models.py,requests/models.py requests/sessions.py requests/api.py requests/adapters.py requests/cookies.py,1428,1,1,1,1.0
 psf__requests-1635,B0 random,17,requests/cookies.py requests/models.py requests/sessions.py,requests/structures.py requests/utils.py requests/exceptions.py requests/adapters.py requests/api.py,1252,0,0,0,0.0
 psf__requests-1635,B1 BM25 (whole files),17,requests/cookies.py requests/models.py requests/sessions.py,requests/cookies.py requests/sessions.py requests/models.py requests/__init__.py requests/adapters.py,2114,1,1,1,1.0
 psf__requests-1635,"K0 keyword search, no def bonus",17,requests/cookies.py requests/models.py requests/sessions.py,requests/sessions.py requests/models.py requests/cookies.py requests/adapters.py requests/api.py,1515,1,1,1,1.0
 psf__requests-1635,K1 keyword search,17,requests/cookies.py requests/models.py requests/sessions.py,requests/sessions.py requests/models.py requests/cookies.py requests/adapters.py requests/api.py,1515,1,1,1,1.0
 psf__requests-1635,K1 + retry clues,17,requests/cookies.py requests/models.py requests/sessions.py,requests/sessions.py requests/models.py requests/cookies.py requests/api.py requests/adapters.py,1544,1,1,1,1.0
+psf__requests-1635,K2 Gemma keywords only,17,requests/cookies.py requests/models.py requests/sessions.py,requests/sessions.py requests/api.py requests/adapters.py requests/models.py requests/cookies.py,893,1,1,1,1.0
+psf__requests-1635,K1 + K2 Gemma keywords,17,requests/cookies.py requests/models.py requests/sessions.py,requests/sessions.py requests/models.py requests/cookies.py requests/adapters.py requests/api.py,1515,1,1,1,1.0
 psf__requests-1657,B0 random,17,requests/sessions.py,requests/status_codes.py requests/api.py tasks.py requests/auth.py requests/__init__.py,502,0,0,0,0.0
 psf__requests-1657,B1 BM25 (whole files),17,requests/sessions.py,requests/sessions.py requests/models.py tasks.py requests/hooks.py requests/adapters.py,1720,1,1,1,1.0
 psf__requests-1657,"K0 keyword search, no def bonus",17,requests/sessions.py,requests/sessions.py requests/models.py tasks.py requests/cookies.py requests/utils.py,859,1,1,1,1.0
 psf__requests-1657,K1 keyword search,17,requests/sessions.py,requests/sessions.py requests/models.py tasks.py requests/cookies.py requests/utils.py,859,1,1,1,1.0
 psf__requests-1657,K1 + retry clues,17,requests/sessions.py,requests/sessions.py requests/models.py requests/cookies.py requests/auth.py tasks.py,779,1,1,1,1.0
+psf__requests-1657,K2 Gemma keywords only,17,requests/sessions.py,requests/sessions.py requests/cookies.py requests/models.py requests/adapters.py requests/api.py,1373,1,1,1,1.0
+psf__requests-1657,K1 + K2 Gemma keywords,17,requests/sessions.py,requests/sessions.py requests/cookies.py requests/models.py requests/utils.py tasks.py,685,1,1,1,1.0
 psf__requests-1689,B0 random,17,requests/models.py,requests/packages/__init__.py requests/sessions.py tasks.py requests/models.py requests/utils.py,1886,0,0,1,1.0
 psf__requests-1689,B1 BM25 (whole files),17,requests/models.py,requests/models.py requests/sessions.py requests/utils.py requests/adapters.py requests/api.py,2345,1,1,1,1.0
 psf__requests-1689,"K0 keyword search, no def bonus",17,requests/models.py,requests/models.py requests/utils.py requests/sessions.py requests/adapters.py requests/compat.py,1186,1,1,1,1.0
 psf__requests-1689,K1 keyword search,17,requests/models.py,requests/models.py requests/utils.py requests/sessions.py requests/api.py requests/adapters.py,1206,1,1,1,1.0
 psf__requests-1689,K1 + retry clues,17,requests/models.py,requests/models.py requests/sessions.py requests/utils.py requests/api.py requests/adapters.py,1404,1,1,1,1.0
+psf__requests-1689,K2 Gemma keywords only,17,requests/models.py,requests/models.py,21,1,1,1,1.0
+psf__requests-1689,K1 + K2 Gemma keywords,17,requests/models.py,requests/models.py requests/utils.py requests/sessions.py requests/api.py requests/adapters.py,1206,1,1,1,1.0
 psf__requests-1713,B0 random,16,requests/cookies.py requests/sessions.py,requests/compat.py requests/sessions.py requests/status_codes.py requests/certs.py requests/hooks.py,814,0,1,1,0.5
 psf__requests-1713,B1 BM25 (whole files),16,requests/cookies.py requests/sessions.py,requests/models.py requests/cookies.py requests/sessions.py requests/utils.py requests/adapters.py,2695,0,1,1,1.0
 psf__requests-1713,"K0 keyword search, no def bonus",16,requests/cookies.py requests/sessions.py,requests/cookies.py requests/sessions.py requests/utils.py requests/models.py requests/api.py,1597,1,1,1,1.0
 psf__requests-1713,K1 keyword search,16,requests/cookies.py requests/sessions.py,requests/cookies.py requests/sessions.py requests/utils.py requests/models.py requests/api.py,1597,1,1,1,1.0
 psf__requests-1713,K1 + retry clues,16,requests/cookies.py requests/sessions.py,requests/cookies.py requests/sessions.py requests/models.py requests/utils.py requests/api.py,1637,1,1,1,1.0
+psf__requests-1713,K2 Gemma keywords only,16,requests/cookies.py requests/sessions.py,requests/cookies.py requests/sessions.py requests/models.py requests/api.py requests/adapters.py,1322,1,1,1,1.0
+psf__requests-1713,K1 + K2 Gemma keywords,16,requests/cookies.py requests/sessions.py,requests/cookies.py requests/sessions.py requests/models.py requests/utils.py requests/api.py,1597,1,1,1,1.0
 psf__requests-1724,B0 random,16,requests/sessions.py,requests/certs.py requests/adapters.py requests/compat.py requests/hooks.py requests/structures.py,691,0,0,0,0.0
 psf__requests-1724,B1 BM25 (whole files),16,requests/sessions.py,requests/models.py requests/api.py requests/sessions.py requests/adapters.py requests/__init__.py,1841,0,1,1,1.0
 psf__requests-1724,"K0 keyword search, no def bonus",16,requests/sessions.py,requests/sessions.py requests/adapters.py requests/models.py requests/api.py requests/cookies.py,1371,1,1,1,1.0
 psf__requests-1724,K1 keyword search,16,requests/sessions.py,requests/sessions.py requests/adapters.py requests/models.py requests/api.py requests/cookies.py,1371,1,1,1,1.0
 psf__requests-1724,K1 + retry clues,16,requests/sessions.py,requests/sessions.py requests/adapters.py requests/models.py requests/api.py requests/cookies.py,1387,1,1,1,1.0
+psf__requests-1724,K2 Gemma keywords only,16,requests/sessions.py,requests/sessions.py requests/api.py requests/models.py requests/adapters.py requests/cookies.py,1171,1,1,1,1.0
+psf__requests-1724,K1 + K2 Gemma keywords,16,requests/sessions.py,requests/sessions.py requests/adapters.py requests/models.py requests/api.py requests/cookies.py,1371,1,1,1,1.0
 psf__requests-1733,B0 random,16,requests/models.py,requests/sessions.py setup.py requests/exceptions.py requests/auth.py requests/compat.py,965,0,0,0,0.0
 psf__requests-1733,B1 BM25 (whole files),16,requests/models.py,requests/models.py requests/certs.py setup.py requests/utils.py requests/adapters.py,1783,1,1,1,1.0
 psf__requests-1733,"K0 keyword search, no def bonus",16,requests/models.py,requests/cookies.py requests/adapters.py requests/sessions.py requests/utils.py requests/models.py,623,0,0,1,1.0
 psf__requests-1733,K1 keyword search,16,requests/models.py,requests/cookies.py requests/adapters.py requests/sessions.py requests/utils.py requests/models.py,623,0,0,1,1.0
 psf__requests-1733,K1 + retry clues,16,requests/models.py,requests/sessions.py requests/adapters.py requests/models.py requests/cookies.py requests/api.py,1572,0,1,1,1.0
+psf__requests-1733,K2 Gemma keywords only,16,requests/models.py,requests/models.py requests/adapters.py requests/sessions.py requests/cookies.py requests/structures.py,576,1,1,1,1.0
+psf__requests-1733,K1 + K2 Gemma keywords,16,requests/models.py,requests/models.py requests/adapters.py requests/sessions.py requests/cookies.py requests/utils.py,877,1,1,1,1.0
 psf__requests-1766,B0 random,16,requests/auth.py,requests/api.py requests/auth.py requests/models.py requests/cookies.py requests/__init__.py,1589,0,1,1,1.0
 psf__requests-1766,B1 BM25 (whole files),16,requests/auth.py,requests/utils.py requests/sessions.py requests/auth.py requests/cookies.py requests/models.py,2512,0,1,1,1.0
 psf__requests-1766,"K0 keyword search, no def bonus",16,requests/auth.py,requests/sessions.py requests/utils.py requests/models.py requests/auth.py requests/adapters.py,764,0,0,1,1.0
 psf__requests-1766,K1 keyword search,16,requests/auth.py,requests/sessions.py requests/utils.py requests/models.py requests/auth.py requests/adapters.py,764,0,0,1,1.0
 psf__requests-1766,K1 + retry clues,16,requests/auth.py,requests/sessions.py requests/models.py requests/auth.py requests/adapters.py requests/utils.py,1409,0,1,1,1.0
+psf__requests-1766,K2 Gemma keywords only,16,requests/auth.py,requests/sessions.py requests/models.py requests/auth.py requests/adapters.py requests/api.py,1244,0,1,1,1.0
+psf__requests-1766,K1 + K2 Gemma keywords,16,requests/auth.py,requests/sessions.py requests/models.py requests/auth.py requests/adapters.py requests/utils.py,1434,0,1,1,1.0
 psf__requests-1768,B0 random,16,requests/utils.py,requests/hooks.py setup.py requests/adapters.py requests/status_codes.py requests/utils.py,1161,0,0,1,1.0
 psf__requests-1768,B1 BM25 (whole files),16,requests/utils.py,requests/utils.py requests/models.py requests/auth.py requests/sessions.py requests/adapters.py,2466,1,1,1,1.0
 psf__requests-1768,"K0 keyword search, no def bonus",16,requests/utils.py,requests/models.py requests/sessions.py requests/utils.py requests/adapters.py requests/auth.py,741,0,1,1,1.0
 psf__requests-1768,K1 keyword search,16,requests/utils.py,requests/models.py requests/sessions.py requests/utils.py requests/adapters.py requests/auth.py,741,0,1,1,1.0
 psf__requests-1768,K1 + retry clues,16,requests/utils.py,requests/models.py requests/utils.py requests/sessions.py requests/adapters.py requests/auth.py,1291,0,1,1,1.0
+psf__requests-1768,K2 Gemma keywords only,16,requests/utils.py,requests/auth.py requests/utils.py requests/models.py requests/adapters.py requests/sessions.py,1100,0,1,1,1.0
+psf__requests-1768,K1 + K2 Gemma keywords,16,requests/utils.py,requests/models.py requests/auth.py requests/sessions.py requests/utils.py requests/adapters.py,1191,0,0,1,1.0
 psf__requests-1776,B0 random,16,requests/auth.py requests/models.py requests/sessions.py,requests/hooks.py requests/__init__.py requests/compat.py requests/certs.py requests/adapters.py,643,0,0,0,0.0
 psf__requests-1776,B1 BM25 (whole files),16,requests/auth.py requests/models.py requests/sessions.py,requests/sessions.py requests/adapters.py requests/cookies.py requests/utils.py requests/api.py,2084,1,1,1,0.333
 psf__requests-1776,"K0 keyword search, no def bonus",16,requests/auth.py requests/models.py requests/sessions.py,requests/sessions.py requests/adapters.py requests/cookies.py requests/models.py requests/api.py,853,1,1,1,0.667
 psf__requests-1776,K1 keyword search,16,requests/auth.py requests/models.py requests/sessions.py,requests/sessions.py requests/adapters.py requests/cookies.py requests/models.py requests/api.py,853,1,1,1,0.667
 psf__requests-1776,K1 + retry clues,16,requests/auth.py requests/models.py requests/sessions.py,requests/sessions.py requests/models.py requests/cookies.py requests/adapters.py requests/api.py,904,1,1,1,0.667
+psf__requests-1776,K2 Gemma keywords only,16,requests/auth.py requests/models.py requests/sessions.py,requests/sessions.py requests/models.py requests/cookies.py requests/adapters.py requests/api.py,1515,1,1,1,0.667
+psf__requests-1776,K1 + K2 Gemma keywords,16,requests/auth.py requests/models.py requests/sessions.py,requests/sessions.py requests/models.py requests/cookies.py requests/adapters.py requests/utils.py,1019,1,1,1,0.667
 psf__requests-1888,B0 random,16,requests/sessions.py,requests/api.py requests/models.py requests/compat.py setup.py requests/structures.py,1212,0,0,0,0.0
 psf__requests-1888,B1 BM25 (whole files),16,requests/sessions.py,requests/utils.py requests/models.py requests/adapters.py requests/sessions.py requests/cookies.py,2852,0,0,1,1.0
 psf__requests-1888,"K0 keyword search, no def bonus",16,requests/sessions.py,requests/utils.py requests/sessions.py requests/models.py requests/adapters.py requests/cookies.py,693,0,1,1,1.0
 psf__requests-1888,K1 keyword search,16,requests/sessions.py,requests/sessions.py requests/utils.py requests/models.py requests/adapters.py requests/cookies.py,693,1,1,1,1.0
 psf__requests-1888,K1 + retry clues,16,requests/sessions.py,requests/sessions.py requests/utils.py requests/models.py requests/adapters.py requests/cookies.py,693,1,1,1,1.0
+psf__requests-1888,K2 Gemma keywords only,16,requests/sessions.py,requests/sessions.py requests/adapters.py requests/models.py requests/api.py requests/__init__.py,670,1,1,1,1.0
+psf__requests-1888,K1 + K2 Gemma keywords,16,requests/sessions.py,requests/sessions.py requests/utils.py requests/models.py requests/adapters.py requests/cookies.py,855,1,1,1,1.0
 psf__requests-1921,B0 random,16,requests/sessions.py,requests/adapters.py requests/cookies.py requests/models.py requests/auth.py requests/api.py,1968,0,0,0,0.0
 psf__requests-1921,B1 BM25 (whole files),16,requests/sessions.py,requests/sessions.py requests/models.py requests/utils.py requests/adapters.py requests/cookies.py,2887,1,1,1,1.0
 psf__requests-1921,"K0 keyword search, no def bonus",16,requests/sessions.py,requests/sessions.py requests/models.py requests/adapters.py requests/utils.py requests/cookies.py,1101,1,1,1,1.0
 psf__requests-1921,K1 keyword search,16,requests/sessions.py,requests/sessions.py requests/models.py requests/adapters.py requests/utils.py requests/cookies.py,1101,1,1,1,1.0
 psf__requests-1921,K1 + retry clues,16,requests/sessions.py,requests/sessions.py requests/models.py requests/adapters.py requests/api.py requests/cookies.py,1319,1,1,1,1.0
+psf__requests-1921,K2 Gemma keywords only,16,requests/sessions.py,requests/sessions.py requests/models.py requests/api.py requests/adapters.py requests/cookies.py,1529,1,1,1,1.0
+psf__requests-1921,K1 + K2 Gemma keywords,16,requests/sessions.py,requests/sessions.py requests/models.py requests/adapters.py requests/api.py requests/cookies.py,1568,1,1,1,1.0
 psf__requests-1944,B0 random,16,requests/adapters.py requests/sessions.py,requests/adapters.py requests/utils.py requests/packages/__init__.py requests/certs.py requests/structures.py,1229,1,1,1,0.5
 psf__requests-1944,B1 BM25 (whole files),16,requests/adapters.py requests/sessions.py,requests/models.py requests/sessions.py requests/adapters.py requests/utils.py requests/exceptions.py,2579,0,1,1,1.0
 psf__requests-1944,"K0 keyword search, no def bonus",16,requests/adapters.py requests/sessions.py,requests/models.py requests/sessions.py requests/adapters.py requests/utils.py requests/api.py,1683,0,1,1,1.0
 psf__requests-1944,K1 keyword search,16,requests/adapters.py requests/sessions.py,requests/models.py requests/sessions.py requests/adapters.py requests/utils.py requests/api.py,1683,0,1,1,1.0
 psf__requests-1944,K1 + retry clues,16,requests/adapters.py requests/sessions.py,requests/sessions.py requests/models.py requests/adapters.py requests/api.py requests/utils.py,1857,1,1,1,1.0
+psf__requests-1944,K2 Gemma keywords only,16,requests/adapters.py requests/sessions.py,requests/sessions.py requests/adapters.py requests/models.py requests/api.py requests/exceptions.py,1175,1,1,1,1.0
+psf__requests-1944,K1 + K2 Gemma keywords,16,requests/adapters.py requests/sessions.py,requests/models.py requests/sessions.py requests/adapters.py requests/api.py requests/utils.py,1698,0,1,1,1.0
 psf__requests-1962,B0 random,16,requests/sessions.py,requests/auth.py setup.py requests/api.py requests/sessions.py requests/hooks.py,995,0,0,1,1.0
 psf__requests-1962,B1 BM25 (whole files),16,requests/sessions.py,requests/sessions.py requests/models.py requests/utils.py setup.py requests/cookies.py,2555,1,1,1,1.0
 psf__requests-1962,"K0 keyword search, no def bonus",16,requests/sessions.py,requests/sessions.py requests/models.py requests/utils.py requests/adapters.py requests/api.py,827,1,1,1,1.0
 psf__requests-1962,K1 keyword search,16,requests/sessions.py,requests/sessions.py requests/models.py requests/utils.py requests/api.py requests/adapters.py,827,1,1,1,1.0
 psf__requests-1962,K1 + retry clues,16,requests/sessions.py,requests/sessions.py requests/models.py requests/adapters.py requests/api.py requests/utils.py,1199,1,1,1,1.0
+psf__requests-1962,K2 Gemma keywords only,16,requests/sessions.py,requests/sessions.py requests/models.py requests/api.py requests/cookies.py requests/adapters.py,1028,1,1,1,1.0
+psf__requests-1962,K1 + K2 Gemma keywords,16,requests/sessions.py,requests/sessions.py requests/models.py requests/api.py requests/adapters.py requests/utils.py,903,1,1,1,1.0
 psf__requests-1963,B0 random,16,requests/sessions.py,requests/models.py requests/exceptions.py requests/auth.py requests/cookies.py requests/__init__.py,1605,0,0,0,0.0
 psf__requests-1963,B1 BM25 (whole files),16,requests/sessions.py,requests/sessions.py requests/models.py requests/api.py requests/utils.py requests/__init__.py,2237,1,1,1,1.0
 psf__requests-1963,"K0 keyword search, no def bonus",16,requests/sessions.py,requests/sessions.py requests/models.py requests/adapters.py requests/api.py requests/cookies.py,356,1,1,1,1.0
 psf__requests-1963,K1 keyword search,16,requests/sessions.py,requests/sessions.py requests/models.py requests/adapters.py requests/api.py requests/cookies.py,356,1,1,1,1.0
 psf__requests-1963,K1 + retry clues,16,requests/sessions.py,requests/sessions.py requests/models.py requests/adapters.py requests/api.py requests/cookies.py,2083,1,1,1,1.0
+psf__requests-1963,K2 Gemma keywords only,16,requests/sessions.py,requests/sessions.py requests/models.py requests/api.py requests/cookies.py requests/adapters.py,1324,1,1,1,1.0
+psf__requests-1963,K1 + K2 Gemma keywords,16,requests/sessions.py,requests/sessions.py requests/models.py requests/api.py requests/cookies.py requests/adapters.py,508,1,1,1,1.0
 psf__requests-2148,B0 random,16,requests/models.py,setup.py requests/__init__.py requests/certs.py requests/structures.py requests/exceptions.py,348,0,0,0,0.0
 psf__requests-2148,B1 BM25 (whole files),16,requests/models.py,requests/models.py requests/utils.py requests/adapters.py requests/sessions.py requests/exceptions.py,2617,1,1,1,1.0
 psf__requests-2148,"K0 keyword search, no def bonus",16,requests/models.py,requests/models.py requests/adapters.py requests/sessions.py requests/utils.py requests/cookies.py,1852,1,1,1,1.0
 psf__requests-2148,K1 keyword search,16,requests/models.py,requests/models.py requests/adapters.py requests/sessions.py requests/utils.py requests/cookies.py,1852,1,1,1,1.0
 psf__requests-2148,K1 + retry clues,16,requests/models.py,requests/models.py requests/adapters.py requests/sessions.py requests/utils.py requests/exceptions.py,1730,1,1,1,1.0
+psf__requests-2148,K2 Gemma keywords only,16,requests/models.py,requests/models.py requests/adapters.py requests/sessions.py requests/exceptions.py requests/utils.py,912,1,1,1,1.0
+psf__requests-2148,K1 + K2 Gemma keywords,16,requests/models.py,requests/models.py requests/adapters.py requests/sessions.py requests/utils.py requests/exceptions.py,1526,1,1,1,1.0
 psf__requests-2153,B0 random,16,requests/compat.py requests/models.py,requests/cookies.py requests/hooks.py requests/models.py requests/status_codes.py requests/__init__.py,1486,0,1,1,0.5
 psf__requests-2153,B1 BM25 (whole files),16,requests/compat.py requests/models.py,requests/models.py requests/sessions.py requests/api.py requests/adapters.py requests/utils.py,2665,1,1,1,0.5
 psf__requests-2153,"K0 keyword search, no def bonus",16,requests/compat.py requests/models.py,requests/sessions.py requests/models.py requests/adapters.py requests/utils.py requests/api.py,1632,0,1,1,0.5
 psf__requests-2153,K1 keyword search,16,requests/compat.py requests/models.py,requests/sessions.py requests/models.py requests/adapters.py requests/api.py requests/utils.py,1632,0,1,1,0.5
 psf__requests-2153,K1 + retry clues,16,requests/compat.py requests/models.py,requests/sessions.py requests/models.py requests/adapters.py requests/api.py requests/utils.py,1632,0,1,1,0.5
+psf__requests-2153,K2 Gemma keywords only,16,requests/compat.py requests/models.py,requests/sessions.py requests/adapters.py requests/api.py requests/exceptions.py requests/models.py,1265,0,0,1,0.5
+psf__requests-2153,K1 + K2 Gemma keywords,16,requests/compat.py requests/models.py,requests/sessions.py requests/models.py requests/adapters.py requests/api.py requests/utils.py,1632,0,1,1,0.5
 psf__requests-2193,B0 random,16,requests/adapters.py,requests/__init__.py requests/compat.py requests/adapters.py requests/certs.py requests/exceptions.py,735,0,1,1,1.0
 psf__requests-2193,B1 BM25 (whole files),16,requests/adapters.py,requests/models.py requests/exceptions.py requests/adapters.py setup.py requests/__init__.py,1474,0,1,1,1.0
 psf__requests-2193,"K0 keyword search, no def bonus",16,requests/adapters.py,requests/adapters.py requests/models.py setup.py requests/__init__.py requests/utils.py,611,1,1,1,1.0
 psf__requests-2193,K1 keyword search,16,requests/adapters.py,requests/adapters.py requests/models.py setup.py requests/__init__.py requests/utils.py,611,1,1,1,1.0
 psf__requests-2193,K1 + retry clues,16,requests/adapters.py,requests/models.py requests/adapters.py requests/__init__.py requests/exceptions.py setup.py,558,0,1,1,1.0
+psf__requests-2193,K2 Gemma keywords only,16,requests/adapters.py,requests/adapters.py requests/sessions.py requests/exceptions.py requests/models.py requests/api.py,908,1,1,1,1.0
+psf__requests-2193,K1 + K2 Gemma keywords,16,requests/adapters.py,requests/adapters.py requests/sessions.py requests/models.py requests/exceptions.py requests/__init__.py,886,1,1,1,1.0
 psf__requests-2317,B0 random,16,requests/sessions.py,requests/api.py requests/__init__.py requests/models.py requests/sessions.py requests/exceptions.py,1810,0,0,1,1.0
 psf__requests-2317,B1 BM25 (whole files),16,requests/sessions.py,requests/models.py requests/cookies.py requests/sessions.py requests/adapters.py requests/utils.py,3079,0,1,1,1.0
 psf__requests-2317,"K0 keyword search, no def bonus",16,requests/sessions.py,requests/sessions.py requests/models.py requests/cookies.py requests/utils.py requests/adapters.py,221,1,1,1,1.0
 psf__requests-2317,K1 keyword search,16,requests/sessions.py,requests/sessions.py requests/models.py requests/cookies.py requests/utils.py requests/adapters.py,221,1,1,1,1.0
 psf__requests-2317,K1 + retry clues,16,requests/sessions.py,requests/sessions.py requests/models.py requests/cookies.py requests/adapters.py requests/utils.py,1173,1,1,1,1.0
+psf__requests-2317,K2 Gemma keywords only,16,requests/sessions.py,requests/sessions.py requests/models.py requests/adapters.py requests/cookies.py requests/auth.py,704,1,1,1,1.0
+psf__requests-2317,K1 + K2 Gemma keywords,16,requests/sessions.py,requests/sessions.py requests/models.py requests/cookies.py requests/utils.py requests/adapters.py,221,1,1,1,1.0
 psf__requests-2393,B0 random,16,requests/utils.py,requests/hooks.py requests/exceptions.py requests/status_codes.py requests/models.py requests/__init__.py,1154,0,0,0,0.0
 psf__requests-2393,B1 BM25 (whole files),16,requests/utils.py,requests/utils.py requests/models.py requests/api.py requests/sessions.py requests/adapters.py,2791,1,1,1,1.0
 psf__requests-2393,"K0 keyword search, no def bonus",16,requests/utils.py,requests/models.py requests/utils.py requests/adapters.py requests/sessions.py setup.py,563,0,1,1,1.0
 psf__requests-2393,K1 keyword search,16,requests/utils.py,requests/models.py requests/utils.py requests/adapters.py requests/sessions.py setup.py,563,0,1,1,1.0
 psf__requests-2393,K1 + retry clues,16,requests/utils.py,requests/utils.py requests/models.py requests/sessions.py requests/adapters.py setup.py,593,1,1,1,1.0
+psf__requests-2393,K2 Gemma keywords only,16,requests/utils.py,requests/adapters.py requests/sessions.py requests/exceptions.py requests/models.py requests/api.py,1439,0,0,0,0.0
+psf__requests-2393,K1 + K2 Gemma keywords,16,requests/utils.py,requests/adapters.py requests/models.py requests/sessions.py requests/exceptions.py requests/api.py,1439,0,0,0,0.0
 psf__requests-2413,B0 random,16,requests/compat.py requests/utils.py,requests/api.py requests/certs.py requests/utils.py requests/models.py requests/packages/__init__.py,1792,0,1,1,0.5
 psf__requests-2413,B1 BM25 (whole files),16,requests/compat.py requests/utils.py,requests/models.py requests/utils.py requests/adapters.py requests/compat.py requests/sessions.py,2775,0,1,1,1.0
 psf__requests-2413,"K0 keyword search, no def bonus",16,requests/compat.py requests/utils.py,requests/utils.py requests/models.py requests/compat.py requests/sessions.py requests/cookies.py,1070,1,1,1,1.0
 psf__requests-2413,K1 keyword search,16,requests/compat.py requests/utils.py,requests/utils.py requests/models.py requests/compat.py requests/sessions.py requests/cookies.py,1070,1,1,1,1.0
 psf__requests-2413,K1 + retry clues,16,requests/compat.py requests/utils.py,requests/utils.py requests/models.py requests/sessions.py requests/compat.py requests/cookies.py,1084,1,1,1,1.0
+psf__requests-2413,K2 Gemma keywords only,16,requests/compat.py requests/utils.py,requests/compat.py requests/utils.py requests/models.py requests/adapters.py,273,1,1,1,1.0
+psf__requests-2413,K1 + K2 Gemma keywords,16,requests/compat.py requests/utils.py,requests/utils.py requests/models.py requests/compat.py requests/sessions.py requests/cookies.py,1070,1,1,1,1.0
 psf__requests-2466,B0 random,16,requests/packages/__init__.py,requests/hooks.py requests/status_codes.py requests/certs.py requests/__init__.py requests/exceptions.py,340,0,0,0,0.0
 psf__requests-2466,B1 BM25 (whole files),16,requests/packages/__init__.py,requests/models.py requests/hooks.py requests/cookies.py requests/utils.py requests/status_codes.py,2148,0,0,0,0.0
 psf__requests-2466,"K0 keyword search, no def bonus",16,requests/packages/__init__.py,requests/utils.py requests/models.py requests/packages/__init__.py requests/cookies.py requests/sessions.py,621,0,1,1,1.0
 psf__requests-2466,K1 keyword search,16,requests/packages/__init__.py,requests/utils.py requests/models.py requests/packages/__init__.py requests/cookies.py requests/sessions.py,621,0,1,1,1.0
 psf__requests-2466,K1 + retry clues,16,requests/packages/__init__.py,requests/utils.py requests/models.py requests/packages/__init__.py requests/cookies.py requests/sessions.py,621,0,1,1,1.0
+psf__requests-2466,K2 Gemma keywords only,16,requests/packages/__init__.py,requests/packages/__init__.py setup.py requests/models.py requests/compat.py requests/__init__.py,381,1,1,1,1.0
+psf__requests-2466,K1 + K2 Gemma keywords,16,requests/packages/__init__.py,requests/utils.py requests/models.py requests/packages/__init__.py requests/cookies.py requests/sessions.py,621,0,1,1,1.0
 psf__requests-2617,B0 random,16,requests/models.py requests/sessions.py,requests/compat.py setup.py requests/adapters.py requests/cookies.py requests/status_codes.py,1146,0,0,0,0.0
 psf__requests-2617,B1 BM25 (whole files),16,requests/models.py requests/sessions.py,requests/models.py requests/sessions.py requests/adapters.py setup.py requests/api.py,2191,1,1,1,1.0
 psf__requests-2617,"K0 keyword search, no def bonus",16,requests/models.py requests/sessions.py,requests/sessions.py requests/models.py requests/adapters.py requests/api.py requests/utils.py,1505,1,1,1,1.0
 psf__requests-2617,K1 keyword search,16,requests/models.py requests/sessions.py,requests/sessions.py requests/models.py requests/adapters.py requests/api.py requests/utils.py,1505,1,1,1,1.0
 psf__requests-2617,K1 + retry clues,16,requests/models.py requests/sessions.py,requests/sessions.py requests/models.py requests/adapters.py requests/api.py requests/utils.py,1689,1,1,1,1.0
+psf__requests-2617,K2 Gemma keywords only,16,requests/models.py requests/sessions.py,requests/sessions.py requests/models.py requests/adapters.py requests/api.py requests/cookies.py,1337,1,1,1,1.0
+psf__requests-2617,K1 + K2 Gemma keywords,16,requests/models.py requests/sessions.py,requests/models.py requests/sessions.py requests/adapters.py requests/api.py requests/cookies.py,1651,1,1,1,1.0
 psf__requests-2674,B0 random,16,requests/adapters.py,requests/adapters.py requests/exceptions.py requests/status_codes.py requests/__init__.py requests/api.py,852,1,1,1,1.0
 psf__requests-2674,B1 BM25 (whole files),16,requests/adapters.py,requests/adapters.py requests/utils.py requests/models.py requests/cookies.py requests/sessions.py,3155,1,1,1,1.0
 psf__requests-2674,"K0 keyword search, no def bonus",16,requests/adapters.py,requests/adapters.py requests/models.py setup.py requests/sessions.py requests/exceptions.py,594,1,1,1,1.0
 psf__requests-2674,K1 keyword search,16,requests/adapters.py,requests/adapters.py requests/models.py setup.py requests/sessions.py requests/exceptions.py,594,1,1,1,1.0
 psf__requests-2674,K1 + retry clues,16,requests/adapters.py,requests/adapters.py requests/sessions.py requests/models.py requests/exceptions.py requests/__init__.py,749,1,1,1,1.0
+psf__requests-2674,K2 Gemma keywords only,16,requests/adapters.py,requests/exceptions.py requests/adapters.py requests/models.py requests/sessions.py setup.py,651,0,1,1,1.0
+psf__requests-2674,K1 + K2 Gemma keywords,16,requests/adapters.py,requests/exceptions.py requests/adapters.py requests/models.py requests/sessions.py setup.py,651,0,1,1,1.0
 psf__requests-2678,B0 random,16,requests/adapters.py requests/auth.py requests/packages/__init__.py,requests/utils.py requests/hooks.py requests/auth.py requests/status_codes.py requests/__init__.py,1136,0,1,1,0.333
 psf__requests-2678,B1 BM25 (whole files),16,requests/adapters.py requests/auth.py requests/packages/__init__.py,requests/adapters.py requests/utils.py requests/models.py requests/cookies.py requests/sessions.py,3153,1,1,1,0.333
 psf__requests-2678,"K0 keyword search, no def bonus",16,requests/adapters.py requests/auth.py requests/packages/__init__.py,requests/adapters.py requests/models.py setup.py requests/sessions.py requests/exceptions.py,594,1,1,1,0.333
 psf__requests-2678,K1 keyword search,16,requests/adapters.py requests/auth.py requests/packages/__init__.py,requests/adapters.py requests/models.py setup.py requests/sessions.py requests/exceptions.py,594,1,1,1,0.333
 psf__requests-2678,K1 + retry clues,16,requests/adapters.py requests/auth.py requests/packages/__init__.py,requests/adapters.py requests/sessions.py requests/models.py requests/auth.py requests/api.py,1755,1,1,1,0.667
+psf__requests-2678,K2 Gemma keywords only,16,requests/adapters.py requests/auth.py requests/packages/__init__.py,requests/exceptions.py requests/adapters.py requests/models.py requests/sessions.py setup.py,652,0,1,1,0.333
+psf__requests-2678,K1 + K2 Gemma keywords,16,requests/adapters.py requests/auth.py requests/packages/__init__.py,requests/exceptions.py requests/adapters.py requests/models.py requests/sessions.py setup.py,652,0,1,1,0.333
 psf__requests-2754,B0 random,16,requests/sessions.py requests/utils.py,requests/utils.py requests/packages/__init__.py requests/hooks.py requests/models.py setup.py,1750,1,1,1,0.5
 psf__requests-2754,B1 BM25 (whole files),16,requests/sessions.py requests/utils.py,requests/utils.py requests/models.py requests/sessions.py requests/adapters.py requests/api.py,2874,1,1,1,1.0
 psf__requests-2754,"K0 keyword search, no def bonus",16,requests/sessions.py requests/utils.py,requests/sessions.py requests/utils.py requests/models.py setup.py requests/adapters.py,702,1,1,1,1.0
 psf__requests-2754,K1 keyword search,16,requests/sessions.py requests/utils.py,requests/sessions.py requests/utils.py requests/models.py setup.py requests/adapters.py,702,1,1,1,1.0
 psf__requests-2754,K1 + retry clues,16,requests/sessions.py requests/utils.py,requests/sessions.py requests/models.py requests/utils.py requests/adapters.py requests/api.py,1961,1,1,1,1.0
+psf__requests-2754,K2 Gemma keywords only,16,requests/sessions.py requests/utils.py,requests/sessions.py requests/adapters.py requests/models.py requests/api.py requests/cookies.py,1777,1,1,1,0.5
+psf__requests-2754,K1 + K2 Gemma keywords,16,requests/sessions.py requests/utils.py,requests/sessions.py requests/adapters.py requests/models.py requests/api.py requests/utils.py,1655,1,1,1,1.0
 psf__requests-2821,B0 random,16,requests/models.py requests/sessions.py,requests/__init__.py requests/sessions.py requests/api.py requests/certs.py requests/compat.py,999,0,1,1,0.5
 psf__requests-2821,B1 BM25 (whole files),16,requests/models.py requests/sessions.py,requests/models.py setup.py requests/adapters.py requests/sessions.py requests/api.py,2196,1,1,1,1.0
 psf__requests-2821,"K0 keyword search, no def bonus",16,requests/models.py requests/sessions.py,requests/sessions.py requests/adapters.py requests/models.py requests/api.py requests/cookies.py,1221,1,1,1,1.0
 psf__requests-2821,K1 keyword search,16,requests/models.py requests/sessions.py,requests/sessions.py requests/adapters.py requests/models.py requests/api.py requests/cookies.py,1221,1,1,1,1.0
 psf__requests-2821,K1 + retry clues,16,requests/models.py requests/sessions.py,requests/sessions.py requests/adapters.py requests/models.py requests/api.py requests/cookies.py,1768,1,1,1,1.0
+psf__requests-2821,K2 Gemma keywords only,16,requests/models.py requests/sessions.py,requests/sessions.py requests/adapters.py requests/api.py requests/models.py requests/cookies.py,1108,1,1,1,1.0
+psf__requests-2821,K1 + K2 Gemma keywords,16,requests/models.py requests/sessions.py,requests/sessions.py requests/adapters.py requests/models.py requests/api.py requests/cookies.py,1221,1,1,1,1.0
 psf__requests-2873,B0 random,16,requests/utils.py,requests/hooks.py requests/api.py requests/adapters.py requests/compat.py requests/exceptions.py,813,0,0,0,0.0
 psf__requests-2873,B1 BM25 (whole files),16,requests/utils.py,requests/models.py requests/utils.py requests/api.py requests/sessions.py requests/adapters.py,2842,0,1,1,1.0
 psf__requests-2873,"K0 keyword search, no def bonus",16,requests/utils.py,requests/models.py requests/sessions.py requests/api.py requests/adapters.py requests/utils.py,662,0,0,1,1.0
 psf__requests-2873,K1 keyword search,16,requests/utils.py,requests/models.py requests/sessions.py requests/api.py requests/adapters.py requests/utils.py,662,0,0,1,1.0
 psf__requests-2873,K1 + retry clues,16,requests/utils.py,requests/models.py requests/sessions.py requests/utils.py requests/api.py requests/adapters.py,706,0,1,1,1.0
+psf__requests-2873,K2 Gemma keywords only,16,requests/utils.py,requests/models.py requests/sessions.py requests/api.py requests/adapters.py requests/utils.py,1304,0,0,1,1.0
+psf__requests-2873,K1 + K2 Gemma keywords,16,requests/utils.py,requests/models.py requests/sessions.py requests/api.py requests/utils.py requests/adapters.py,800,0,0,1,1.0
 psf__requests-2931,B0 random,16,requests/models.py,requests/compat.py requests/utils.py requests/auth.py requests/sessions.py requests/adapters.py,2140,0,0,0,0.0
 psf__requests-2931,B1 BM25 (whole files),16,requests/models.py,requests/utils.py requests/sessions.py requests/models.py requests/__init__.py requests/api.py,2478,0,1,1,1.0
 psf__requests-2931,"K0 keyword search, no def bonus",16,requests/models.py,requests/models.py requests/sessions.py requests/utils.py requests/api.py requests/__init__.py,573,1,1,1,1.0
 psf__requests-2931,K1 keyword search,16,requests/models.py,requests/sessions.py requests/models.py requests/utils.py requests/api.py requests/__init__.py,573,0,1,1,1.0
 psf__requests-2931,K1 + retry clues,16,requests/models.py,requests/sessions.py requests/models.py requests/api.py requests/utils.py requests/adapters.py,1437,0,1,1,1.0
+psf__requests-2931,K2 Gemma keywords only,16,requests/models.py,requests/models.py requests/sessions.py requests/api.py requests/auth.py requests/utils.py,997,1,1,1,1.0
+psf__requests-2931,K1 + K2 Gemma keywords,16,requests/models.py,requests/models.py requests/sessions.py requests/api.py requests/utils.py requests/__init__.py,929,1,1,1,1.0
 psf__requests-3362,B0 random,16,requests/utils.py,requests/compat.py requests/api.py requests/structures.py requests/packages/__init__.py requests/models.py,1219,0,0,0,0.0
 psf__requests-3362,B1 BM25 (whole files),16,requests/utils.py,requests/models.py requests/utils.py requests/sessions.py requests/structures.py requests/adapters.py,2901,0,1,1,1.0
 psf__requests-3362,"K0 keyword search, no def bonus",16,requests/utils.py,requests/models.py requests/utils.py requests/sessions.py requests/api.py requests/adapters.py,937,0,1,1,1.0
 psf__requests-3362,K1 keyword search,16,requests/utils.py,requests/models.py requests/utils.py requests/sessions.py requests/api.py requests/adapters.py,937,0,1,1,1.0
 psf__requests-3362,K1 + retry clues,16,requests/utils.py,requests/models.py requests/utils.py requests/sessions.py requests/adapters.py requests/api.py,1198,0,1,1,1.0
+psf__requests-3362,K2 Gemma keywords only,16,requests/utils.py,requests/models.py requests/utils.py requests/api.py requests/sessions.py requests/adapters.py,1090,0,1,1,1.0
+psf__requests-3362,K1 + K2 Gemma keywords,16,requests/utils.py,requests/models.py requests/utils.py requests/sessions.py requests/api.py requests/adapters.py,913,0,1,1,1.0
 psf__requests-3718,B0 random,17,requests/models.py,requests/_internal_utils.py requests/certs.py requests/compat.py requests/exceptions.py requests/adapters.py,744,0,0,0,0.0
 psf__requests-3718,B1 BM25 (whole files),17,requests/models.py,requests/models.py requests/sessions.py requests/adapters.py requests/exceptions.py requests/api.py,2399,1,1,1,1.0
 psf__requests-3718,"K0 keyword search, no def bonus",17,requests/models.py,requests/models.py requests/sessions.py requests/adapters.py requests/utils.py requests/api.py,1816,1,1,1,1.0
 psf__requests-3718,K1 keyword search,17,requests/models.py,requests/models.py requests/sessions.py requests/adapters.py requests/api.py requests/utils.py,1816,1,1,1,1.0
 psf__requests-3718,K1 + retry clues,17,requests/models.py,requests/models.py requests/sessions.py requests/adapters.py requests/api.py requests/utils.py,1837,1,1,1,1.0
+psf__requests-3718,K2 Gemma keywords only,17,requests/models.py,requests/models.py requests/sessions.py requests/api.py requests/adapters.py requests/auth.py,1289,1,1,1,1.0
+psf__requests-3718,K1 + K2 Gemma keywords,17,requests/models.py,requests/models.py requests/sessions.py requests/adapters.py requests/api.py requests/utils.py,1816,1,1,1,1.0
 psf__requests-3738,B0 random,17,requests/models.py,requests/hooks.py requests/certs.py requests/status_codes.py requests/packages/__init__.py requests/api.py,347,0,0,0,0.0
 psf__requests-3738,B1 BM25 (whole files),17,requests/models.py,requests/models.py requests/utils.py requests/adapters.py requests/sessions.py requests/cookies.py,3508,1,1,1,1.0
 psf__requests-3738,"K0 keyword search, no def bonus",17,requests/models.py,requests/models.py requests/utils.py requests/sessions.py requests/adapters.py requests/cookies.py,497,1,1,1,1.0
 psf__requests-3738,K1 keyword search,17,requests/models.py,requests/models.py requests/utils.py requests/sessions.py requests/adapters.py requests/cookies.py,497,1,1,1,1.0
 psf__requests-3738,K1 + retry clues,17,requests/models.py,requests/models.py requests/sessions.py requests/utils.py requests/api.py requests/adapters.py,1538,1,1,1,1.0
+psf__requests-3738,K2 Gemma keywords only,17,requests/models.py,requests/sessions.py requests/models.py requests/adapters.py requests/api.py requests/utils.py,1925,0,1,1,1.0
+psf__requests-3738,K1 + K2 Gemma keywords,17,requests/models.py,requests/models.py requests/sessions.py requests/adapters.py requests/api.py requests/utils.py,1860,1,1,1,1.0
 psf__requests-4106,B0 random,19,requests/packages.py,requests/sessions.py requests/hooks.py setup.py requests/packages.py requests/utils.py,1796,0,0,1,1.0
 psf__requests-4106,B1 BM25 (whole files),19,requests/packages.py,requests/help.py setup.py requests/__init__.py requests/utils.py requests/cookies.py,1769,0,0,0,0.0
 psf__requests-4106,"K0 keyword search, no def bonus",19,requests/packages.py,requests/help.py requests/models.py requests/utils.py requests/sessions.py setup.py,607,0,0,0,0.0
 psf__requests-4106,K1 keyword search,19,requests/packages.py,requests/help.py requests/models.py requests/utils.py requests/sessions.py setup.py,607,0,0,0,0.0
 psf__requests-4106,K1 + retry clues,19,requests/packages.py,requests/help.py requests/models.py setup.py requests/utils.py requests/sessions.py,647,0,0,0,0.0
+psf__requests-4106,K2 Gemma keywords only,19,requests/packages.py,requests/packages.py requests/adapters.py requests/__init__.py requests/help.py setup.py,443,1,1,1,1.0
+psf__requests-4106,K1 + K2 Gemma keywords,19,requests/packages.py,requests/help.py requests/models.py requests/utils.py requests/sessions.py setup.py,607,0,0,0,0.0
 psf__requests-4356,B0 random,19,requests/adapters.py requests/exceptions.py,setup.py requests/structures.py requests/certs.py requests/help.py requests/utils.py,1291,0,0,0,0.0
 psf__requests-4356,B1 BM25 (whole files),19,requests/adapters.py requests/exceptions.py,requests/models.py requests/sessions.py requests/adapters.py requests/utils.py requests/exceptions.py,3279,0,1,1,1.0
 psf__requests-4356,"K0 keyword search, no def bonus",19,requests/adapters.py requests/exceptions.py,requests/sessions.py requests/adapters.py requests/models.py requests/utils.py requests/api.py,1763,0,1,1,0.5
 psf__requests-4356,K1 keyword search,19,requests/adapters.py requests/exceptions.py,requests/sessions.py requests/adapters.py requests/models.py requests/utils.py requests/api.py,1763,0,1,1,0.5
 psf__requests-4356,K1 + retry clues,19,requests/adapters.py requests/exceptions.py,requests/sessions.py requests/adapters.py requests/utils.py requests/models.py requests/exceptions.py,1753,0,1,1,1.0
+psf__requests-4356,K2 Gemma keywords only,19,requests/adapters.py requests/exceptions.py,requests/adapters.py requests/sessions.py requests/api.py requests/models.py requests/auth.py,1382,1,1,1,0.5
+psf__requests-4356,K1 + K2 Gemma keywords,19,requests/adapters.py requests/exceptions.py,requests/sessions.py requests/adapters.py requests/models.py requests/utils.py requests/cookies.py,1863,0,1,1,0.5
 psf__requests-4718,B0 random,19,requests/sessions.py,requests/_internal_utils.py requests/certs.py requests/__version__.py requests/structures.py requests/packages.py,196,0,0,0,0.0
 psf__requests-4718,B1 BM25 (whole files),19,requests/sessions.py,requests/sessions.py requests/adapters.py requests/utils.py requests/models.py requests/help.py,3340,1,1,1,1.0
 psf__requests-4718,"K0 keyword search, no def bonus",19,requests/sessions.py,requests/sessions.py requests/help.py requests/adapters.py requests/utils.py requests/models.py,1063,1,1,1,1.0
 psf__requests-4718,K1 keyword search,19,requests/sessions.py,requests/sessions.py requests/help.py requests/adapters.py requests/utils.py requests/models.py,1063,1,1,1,1.0
 psf__requests-4718,K1 + retry clues,19,requests/sessions.py,requests/sessions.py requests/models.py requests/adapters.py requests/utils.py requests/help.py,1753,1,1,1,1.0
+psf__requests-4718,K2 Gemma keywords only,19,requests/sessions.py,requests/sessions.py requests/adapters.py requests/api.py requests/models.py requests/auth.py,1533,1,1,1,1.0
+psf__requests-4718,K1 + K2 Gemma keywords,19,requests/sessions.py,requests/sessions.py requests/adapters.py requests/help.py requests/models.py requests/utils.py,1421,1,1,1,1.0
 psf__requests-5087,B0 random,19,requests/models.py,requests/sessions.py requests/cookies.py requests/models.py requests/__version__.py requests/adapters.py,2824,0,1,1,1.0
 psf__requests-5087,B1 BM25 (whole files),19,requests/models.py,requests/models.py requests/utils.py requests/sessions.py requests/cookies.py requests/exceptions.py,3380,1,1,1,1.0
 psf__requests-5087,"K0 keyword search, no def bonus",19,requests/models.py,requests/models.py requests/utils.py requests/help.py requests/sessions.py requests/adapters.py,1101,1,1,1,1.0
 psf__requests-5087,K1 keyword search,19,requests/models.py,requests/models.py requests/sessions.py requests/utils.py requests/help.py requests/adapters.py,1101,1,1,1,1.0
 psf__requests-5087,K1 + retry clues,19,requests/models.py,requests/models.py requests/sessions.py requests/utils.py requests/adapters.py requests/help.py,1252,1,1,1,1.0
+psf__requests-5087,K2 Gemma keywords only,19,requests/models.py,requests/models.py requests/sessions.py requests/adapters.py requests/api.py requests/utils.py,1251,1,1,1,1.0
+psf__requests-5087,K1 + K2 Gemma keywords,19,requests/models.py,requests/models.py requests/sessions.py requests/utils.py requests/help.py requests/adapters.py,1190,1,1,1,1.0
 psf__requests-5414,B0 random,19,requests/models.py,requests/exceptions.py requests/certs.py requests/api.py requests/help.py requests/packages.py,476,0,0,0,0.0
 psf__requests-5414,B1 BM25 (whole files),19,requests/models.py,requests/help.py requests/models.py requests/utils.py requests/exceptions.py requests/cookies.py,2843,0,1,1,1.0
 psf__requests-5414,"K0 keyword search, no def bonus",19,requests/models.py,requests/models.py requests/help.py requests/utils.py requests/sessions.py requests/adapters.py,1171,1,1,1,1.0
 psf__requests-5414,K1 keyword search,19,requests/models.py,requests/models.py requests/help.py requests/utils.py requests/sessions.py requests/adapters.py,1171,1,1,1,1.0
 psf__requests-5414,K1 + retry clues,19,requests/models.py,requests/models.py requests/help.py requests/utils.py requests/sessions.py requests/adapters.py,1198,1,1,1,1.0
+psf__requests-5414,K2 Gemma keywords only,19,requests/models.py,requests/models.py requests/sessions.py requests/utils.py requests/compat.py requests/cookies.py,982,1,1,1,1.0
+psf__requests-5414,K1 + K2 Gemma keywords,19,requests/models.py,requests/models.py requests/sessions.py requests/help.py requests/utils.py requests/adapters.py,1410,1,1,1,1.0
 psf__requests-6028,B0 random,19,requests/utils.py,requests/status_codes.py requests/compat.py requests/auth.py requests/models.py requests/certs.py,1505,0,0,0,0.0
 psf__requests-6028,B1 BM25 (whole files),19,requests/utils.py,requests/help.py requests/utils.py requests/sessions.py requests/models.py requests/__init__.py,3092,0,1,1,1.0
 psf__requests-6028,"K0 keyword search, no def bonus",19,requests/utils.py,requests/help.py requests/models.py requests/sessions.py requests/utils.py requests/__init__.py,769,0,0,1,1.0
 psf__requests-6028,K1 keyword search,19,requests/utils.py,requests/help.py requests/models.py requests/sessions.py requests/utils.py requests/__init__.py,769,0,0,1,1.0
 psf__requests-6028,K1 + retry clues,19,requests/utils.py,requests/help.py requests/models.py requests/sessions.py requests/utils.py requests/adapters.py,825,0,0,1,1.0
+psf__requests-6028,K2 Gemma keywords only,19,requests/utils.py,requests/sessions.py requests/adapters.py requests/models.py requests/auth.py requests/api.py,1606,0,0,0,0.0
+psf__requests-6028,K1 + K2 Gemma keywords,19,requests/utils.py,requests/models.py requests/sessions.py requests/help.py requests/adapters.py requests/auth.py,1548,0,0,0,0.0
 psf__requests-774,B0 random,19,requests/models.py,requests/certs.py requests/hooks.py requests/exceptions.py requests/utils.py requests/safe_mode.py,655,0,0,0,0.0
 psf__requests-774,B1 BM25 (whole files),19,requests/models.py,requests/models.py requests/safe_mode.py requests/sessions.py requests/api.py requests/auth.py,1747,1,1,1,1.0
 psf__requests-774,"K0 keyword search, no def bonus",19,requests/models.py,requests/models.py requests/auth.py requests/cookies.py requests/sessions.py requests/utils.py,1173,1,1,1,1.0
 psf__requests-774,K1 keyword search,19,requests/models.py,requests/models.py requests/auth.py requests/sessions.py requests/api.py requests/cookies.py,1144,1,1,1,1.0
 psf__requests-774,K1 + retry clues,19,requests/models.py,requests/models.py requests/sessions.py requests/auth.py requests/cookies.py requests/api.py,1258,1,1,1,1.0
+psf__requests-774,K2 Gemma keywords only,19,requests/models.py,requests/models.py requests/sessions.py requests/api.py requests/auth.py requests/cookies.py,818,1,1,1,1.0
+psf__requests-774,K1 + K2 Gemma keywords,19,requests/models.py,requests/models.py requests/auth.py requests/sessions.py requests/api.py requests/cookies.py,1144,1,1,1,1.0
 psf__requests-863,B0 random,19,requests/models.py,requests/certs.py requests/cookies.py setup.py requests/safe_mode.py requests/sessions.py,844,0,0,0,0.0
 psf__requests-863,B1 BM25 (whole files),19,requests/models.py,requests/models.py requests/cookies.py requests/sessions.py requests/utils.py requests/auth.py,2556,1,1,1,1.0
 psf__requests-863,"K0 keyword search, no def bonus",19,requests/models.py,requests/models.py requests/cookies.py requests/sessions.py requests/utils.py requests/auth.py,1008,1,1,1,1.0
 psf__requests-863,K1 keyword search,19,requests/models.py,requests/models.py requests/cookies.py requests/sessions.py requests/utils.py requests/auth.py,1008,1,1,1,1.0
 psf__requests-863,K1 + retry clues,19,requests/models.py,requests/models.py requests/sessions.py requests/cookies.py requests/utils.py requests/auth.py,870,1,1,1,1.0
+psf__requests-863,K2 Gemma keywords only,19,requests/models.py,requests/models.py requests/sessions.py requests/auth.py requests/hooks.py requests/cookies.py,736,1,1,1,1.0
+psf__requests-863,K1 + K2 Gemma keywords,19,requests/models.py,requests/models.py requests/sessions.py requests/cookies.py requests/auth.py requests/api.py,686,1,1,1,1.0

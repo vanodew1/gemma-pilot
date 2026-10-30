@@ -3,6 +3,7 @@
 Usage:
     python run.py                 # all instances in data/instances.jsonl
     python run.py --trace psf__requests-2317   # one issue, end to end
+    python run.py --gemma         # also K2: Gemma 4 12B (Ollama) suggests keywords
 """
 import argparse
 import csv
@@ -10,16 +11,46 @@ import json
 import random
 import re
 import subprocess
+import urllib.request
 from pathlib import Path
 
 from rank_bm25 import BM25Okapi
 
-from pilot import count_hits, extract_keywords, gold_files, hit_at_k, rank_files, recall_at_k
+from pilot import (count_hits, extract_keywords, gold_files, hit_at_k, parse_llm_keywords,
+                   rank_files, recall_at_k)
 
 ROOT = Path(__file__).parent
 REPOS = {"psf/requests": ROOT / "repos/requests", "pallets/flask": ROOT / "repos/flask"}
 KS = (1, 3, 5)
 WINDOW = 10  # lines of context either side of a hit, as the agent would open
+GEMMA = "gemma4:12b"
+GEMMA_CACHE = ROOT / "data/gemma_keywords.json"
+GEMMA_PROMPT = """You are helping fix a bug in a Python repository. Below are the bug report and the
+repository's source files. List the strings to grep the repository for to find the code that
+must change: function, class and variable names, file paths from the list, and exact error
+message text. Include names you expect in the faulty code even if the report doesn't say them.
+Reply with only a JSON list of at most 15 strings.
+
+SOURCE FILES:
+{files}
+
+BUG REPORT:
+{issue}"""
+
+
+def gemma_keywords(inst, files, cache):
+    """Gemma's suggested keywords for one issue, cached by instance_id (raw reply kept)."""
+    iid = inst["instance_id"]
+    if iid not in cache:
+        prompt = GEMMA_PROMPT.format(files="\n".join(sorted(files)), issue=inst["problem_statement"][:6000])
+        body = json.dumps({"model": GEMMA, "stream": False, "think": False,
+                           "options": {"temperature": 0, "num_ctx": 8192},
+                           "messages": [{"role": "user", "content": prompt}]}).encode()
+        req = urllib.request.Request("http://localhost:11434/api/chat", body, {"Content-Type": "application/json"})
+        with urllib.request.urlopen(req, timeout=600) as resp:
+            cache[iid] = json.load(resp)["message"]["content"]
+        GEMMA_CACHE.write_text(json.dumps(cache, indent=1), encoding="utf-8")
+    return parse_llm_keywords(cache[iid])
 
 
 def is_source(path):
@@ -109,7 +140,7 @@ def tokenize(text):
     return [t.lower() for t in re.findall(r"[A-Za-z_][A-Za-z0-9_]+", text)]
 
 
-def run_methods(inst, files):
+def run_methods(inst, files, gemma_cache=None):
     """{method: (ranked paths, lines opened)} for one instance."""
     paths = sorted(files)
     issue = inst["problem_statement"]
@@ -128,13 +159,21 @@ def run_methods(inst, files):
     r = [p for p, _ in rank_files(r_kws, files)]
 
     b0 = rng.sample(paths, len(paths))
-    return {
+    methods = {
         "B0 random": (b0, lines_opened(b0, files)),
         "B1 BM25 (whole files)": (b1, lines_opened(b1, files)),
         "K0 keyword search, no def bonus": (k0, lines_opened(k0, files, k1_kws)),
         "K1 keyword search": (k1, lines_opened(k1, files, k1_kws)),
         "K1 + retry clues": (r, lines_opened(r, files, r_kws)),
     }
+    if gemma_cache is not None:
+        g_kws = gemma_keywords(inst, files, gemma_cache)
+        g = [p for p, _ in rank_files(g_kws, files)]
+        merged = list({k.term: k for k in g_kws + k1_kws}.values())  # Gemma's kind wins on overlap
+        m = [p for p, _ in rank_files(merged, files)]
+        methods["K2 Gemma keywords only"] = (g, lines_opened(g, files, g_kws))
+        methods["K1 + K2 Gemma keywords"] = (m, lines_opened(m, files, merged))
+    return methods
 
 
 def load_instances():
@@ -142,14 +181,17 @@ def load_instances():
         return [json.loads(line) for line in f]
 
 
-def evaluate():
+def evaluate(use_gemma=False):
+    gemma_cache = None
+    if use_gemma:
+        gemma_cache = json.loads(GEMMA_CACHE.read_text(encoding="utf-8")) if GEMMA_CACHE.exists() else {}
     rows = []
     for inst in load_instances():
         files = files_at(REPOS[inst["repo"]], inst["base_commit"])
         gold = gold_files(inst["patch"]) & set(files)
         if not gold:
             continue  # fix touched only non-source files
-        for method, (ranked, cost) in run_methods(inst, files).items():
+        for method, (ranked, cost) in run_methods(inst, files, gemma_cache).items():
             row = {"instance_id": inst["instance_id"], "method": method, "n_files": len(files),
                    "gold": " ".join(sorted(gold)), "top5": " ".join(ranked[:5]), "lines_opened": cost}
             for k in KS:
@@ -230,8 +272,9 @@ def trace(instance_id):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--trace", help="instance_id to trace end to end")
+    ap.add_argument("--gemma", action="store_true", help="add K2 rows (needs `ollama serve` with gemma4:12b)")
     args = ap.parse_args()
     if args.trace:
         trace(args.trace)
     else:
-        write_results(evaluate())
+        write_results(evaluate(args.gemma))
