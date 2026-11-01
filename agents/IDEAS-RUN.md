@@ -256,3 +256,60 @@ Three independent reviewers read the whole session. They caught real problems wi
    - The scaffold is design-only and can be deleted if you'd rather keep the repo lean.
 7. **Blast radius was done informally** (a grep and two CLI reruns), not via the full skill. It didn't check the new per-model cache files that `experiments.py` reads.
 8. **The statechart cost a lot of environment debugging** to check budget arithmetic and a filter, which a unit test would also cover. The TLA+ model is still useful as the agent's design contract, but don't over-weight it.
+
+### 10. Reflect (pstack:reflect; 3 Opus reviewers plus a synthesizer). Edits wait for your approval
+
+The skill rule is that skill and memory edits need your explicit OK, so **none of these are applied yet**. Reply with the numbers you approve.
+
+| # | Proposed edit | Where |
+|---|---|---|
+| R1 | Windows/no-mise notes: set `TLA2TOOLS`/`JAVA`, don't trust the `java` on PATH, the chart step needs a POSIX shell, debug with TLC directly | statechart skill (local copy, not the plugin cache) |
+| R2 | Always parenthesize IF/THEN/ELSE inside a `/\` list | statechart skill |
+| R3 | Count convergence only when the shared grounding didn't already state the answer; seed one runner blind or contrarian | arena skill |
+| R4 | In the verify phase, check every empirical claim against the baseline it cites, significance per arm, and untested confounds | arena skill |
+| R5 | Undo scratch breaks with `git checkout`/`git stash`, not backup copies | formal-verification skill |
+| R6 | Ask about hard limits (allowed data, models, rules) in round 1 | grilling skill |
+| R7 | Memory: you want one consolidated output document; flag up front when a skill would create extra files | memory |
+| R8 | A finished result here includes the README update plus a commit and push as vanodew1, without asking | `pilot/CLAUDE.md` |
+| R9 | Memory: plain-word questions from round 1; answer by Q-number | memory |
+| R10 | Ollama: one model per process, `ollama stop` between models | `pilot/CLAUDE.md` |
+
+**Backlog (code fixes, also not done):**
+- a `commit-msg` hook that rejects Claude trailers
+- set `GIT_TERMINAL_PROMPT=0`, `GCM_INTERACTIVE=never` and `PYTHONUTF8=1` in Claude Code settings
+- a statechart Windows guard (upstream pstack)
+- make `experiments.py` exit nonzero on an Ollama 500
+- always print the pick-#1 rate, reversed-order agreement and S1-masked next to selector results
+
+**Already applied, because you stated them directly:** no Claude attribution (in `pilot/CLAUDE.md` and memory); pushes pinned to vanodew1 (in memory).
+
+### 11. What got done (pstack:what-did-i-get-done)
+
+**2026-11-02, commits by vanodew1 in gemma-pilot** (`afdda61` → this commit):
+- Multi-model keyword runs (E2B, E4B, 12B) and the project brief.
+- Session handoff files and `CLAUDE.md`.
+- A selector / named-first / memory-probe experiment harness (`experiments.py`), with a parser bug fixed after code review.
+- CrossHair metric contracts plus the project skill `metric-contracts`, both proven able to fail.
+- A TLA+ model of the planned E4B pipeline (budget and test-edit rules, proven able to fail).
+- The arena-synthesized paper plan and an architect design scaffold (`design/ground-then-choose/`).
+- This log, with review corrections.
+
+**Tools installed outside the repo:** CrossHair and Hypothesis (in the venv); Java 21 and `tla2tools.jar` (in `D:\tools`).
+
+## Bottom line and what's waiting on you
+
+**Recommended direction (a hypothesis, see section 9):** "Pick, Don't Write". Small Gemma models choose the buggy file from 5 grounded candidates instead of writing search words.
+- **Pilot signal:** picking beat generating at every size. Only 12B vs rules is significant, and memorization isn't ruled out.
+- **Why it's still the best bet:**
+  - cheap, under 2 GPU-hours
+  - a verified novelty gap: no same-model pick-vs-generate study across sizes for localization
+  - it ships straight into the E4B agent as `locate.py`
+  - it has a half-built fallback paper (Best New Resource)
+
+**Decisions for you:**
+1. Approve "Pick, Don't Write" as the paper direction, to be re-tested on the 129 competition tasks, with the kill check on Nov 5? Or keep the original size-ladder-plus-fixes plan?
+2. Rewrite `afdda61` and `6d531e4` to remove the Claude lines? This needs a force-push.
+3. Keep or delete the `design/` scaffold?
+4. Which reflect edits (R1–R10) do you approve?
+5. Still blocking everything: Kaggle face verification plus `kaggle.json`, then the 22 GB data download.
+6. Still open from the grilling: Q24–Q27 and the RA question about AI tools.
