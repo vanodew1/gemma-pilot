@@ -8,6 +8,7 @@ Context for picking this work up in a new session.
 - `docs/course-rubric.pdf`: the course project rubric. `docs/project-proposal.pdf`: our proposal (Areesha Ashfaq, Syed Ibad Asim).
 - `research/pilot-and-gemma-plan.md`: research notes on the pilot plan, competition rules and running Gemma locally.
 - `partner-demo/`: partner's agent demo (`agent.py`, toy `demoRepo/`, run logs in `runs/`). See its `README.md`.
+- `agents/PROJECT-BRIEF.md`: **start here.** Decisions, verified competition rules, paper plan and open questions (2026-11-02). The cited details are in `agents/sources/`.
 - `demo-notes/index.html`: one-page notes with both results tables for the professor demo (open in a browser).
 
 ## Project

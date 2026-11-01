@@ -1,0 +1,277 @@
+{
+ "pallets__flask-4045": {
+  "reply": "```json\n[\n  \"blueprint name contains a dot\",\n  \"src/flask/blueprints.py\",\n  \"Blueprint\",\n  \"name\",\n  \"endpoint\"\n]\n```",
+  "seconds": 30.43,
+  "out_tokens": 45
+ },
+ "pallets__flask-4074": {
+  "reply": "```json\n[\n  \"url_for\",\n  \"Blueprint\",\n  \"app.register_blueprint\",\n  \"src/flask/url_for\",\n  \"src/flask/blueprints.py\",\n  \"src/flask/globals.py\",\n  \"url_prefix\",\n  \"bp\",\n  \"func\"\n]\n```",
+  "seconds": 0.44,
+  "out_tokens": 81
+ },
+ "pallets__flask-4160": {
+  "reply": "```json\n[\n  \"Decimal\",\n  \"JSONEncoder\",\n  \"CustomJSONEncoder\",\n  \"app.json_encoder\",\n  \"src/flask/json/__init__.py\",\n  \"src/flask/helpers.py\",\n  \"fjson.dumps\",\n  \"sjson.dumps\",\n  \"decimal.Decimal\",\n  \"datetime\"\n]\n```",
+  "seconds": 0.42,
+  "out_tokens": 88
+ },
+ "pallets__flask-4169": {
+  "reply": "```json\n[\n  \"src/flask/cli.py\",\n  \"self._flush_bg_loading_exception()\",\n  \"raise exc_info\",\n  \"TypeError: exceptions must derive from BaseException\",\n  \"create_app()\",\n  \"RuntimeError()\"\n]\n```",
+  "seconds": 0.36,
+  "out_tokens": 68
+ },
+ "pallets__flask-4544": {
+  "reply": "```json\n[\n  \"src/flask/cli.py\",\n  \"_validate_key()\",\n  \"flask run --key foo.pem --cert foo.cert\",\n  \"Error: Invalid value for '--key': \\\"--cert\\\" must also be specified.\",\n  \"key\",\n  \"cert\"\n]\n```",
+  "seconds": 0.41,
+  "out_tokens": 74
+ },
+ "pallets__flask-4575": {
+  "reply": "```json\n[\n  \"redirect\",\n  \"Flask\",\n  \"src/flask/app.py\",\n  \"src/flask/globals.py\",\n  \"src/flask/helpers.py\",\n  \"current_app\"\n]\n```",
+  "seconds": 0.35,
+  "out_tokens": 59
+ },
+ "pallets__flask-4642": {
+  "reply": "```json\n[\n  \"FlaskGroup\",\n  \"click.group\",\n  \"my_big_cli_group\",\n  \"my_nested_group\",\n  \"my_command\",\n  \"my_flask_app\",\n  \"flask.cli.NoAppException\",\n  \"src/flask/cli.py\",\n  \"src/flask/globals.py\",\n  \"src/flask/app.py\",\n  \"load_app\",\n  \"list_commands\",\n  \"create_app\"\n]\n```",
+  "seconds": 0.57,
+  "out_tokens": 123
+ },
+ "pallets__flask-4935": {
+  "reply": "```json\n[\n  \"src/flask/blueprints.py\",\n  \"register_blueprint\",\n  \"subdomain\",\n  \"url_prefix\",\n  \"parent\",\n  \"child\",\n  \"app.register_blueprint\",\n  \"parent.register_blueprint(child)\"\n]\n```",
+  "seconds": 0.56,
+  "out_tokens": 71
+ },
+ "pallets__flask-4992": {
+  "reply": "```json\n[\n  \"src/flask/config.py\",\n  \"Config.from_file\",\n  \"mode\",\n  \"TypeError: File must be opened in binary mode, e.g. use `open('foo.toml', 'rb')`\"\n]\n```",
+  "seconds": 0.38,
+  "out_tokens": 64
+ },
+ "pallets__flask-5014": {
+  "reply": "```json\n[\n  \"Blueprints\",\n  \"name\",\n  \"src/flask/blueprints.py\",\n  \"ValueError\"\n]\n```",
+  "seconds": 0.29,
+  "out_tokens": 37
+ },
+ "pallets__flask-5063": {
+  "reply": "```json\n[\n  \"flask routes\",\n  \"app.register_blueprint\",\n  \"subdomain\",\n  \"admin_blueprint\",\n  \"test_subdomain_blueprint\",\n  \"src/flask/cli.py\",\n  \"src/flask/blueprints.py\",\n  \"Domain\",\n  \"Endpoint\",\n  \"admin.test.local\",\n  \"test.test.local\",\n  \"test.local\",\n  \"SERVER_NAME\",\n  \"routes\"\n]\n```",
+  "seconds": 0.52,
+  "out_tokens": 117
+ },
+ "psf__requests-1142": {
+  "reply": "```json\n[\n  \"requests.get\",\n  \"requests/api.py\",\n  \"content-length\",\n  \"requests/sessions.py\",\n  \"Request\",\n  \"Session\"\n]\n```",
+  "seconds": 0.35,
+  "out_tokens": 51
+ },
+ "psf__requests-1327": {
+  "reply": "```json\n[\n  \"requests/sessions.py\",\n  \"Session.get_adapter()\",\n  \"s.adapters\",\n  \"HTTPAdapter\",\n  \"mount\",\n  \"get_adapter\",\n  \"sorted\",\n  \"requests/adapters.py\"\n]\n```",
+  "seconds": 0.41,
+  "out_tokens": 67
+ },
+ "psf__requests-1339": {
+  "reply": "```json\n[\n  \"requests.structures.CaseInsensitiveDict\",\n  \"__setitem__\",\n  \"dict.__setitem__\",\n  \"self._clear_lower_keys()\",\n  \"invokefile.py\",\n  \"requests/structures.py\"\n]\n```",
+  "seconds": 0.45,
+  "out_tokens": 69
+ },
+ "psf__requests-1376": {
+  "reply": "```json\n[\n  \"test_unicode_multipart_post_fieldnames\",\n  \"requests.Request\",\n  \"prep.body\",\n  \"b'name=\\\"stuff\\\"'\",\n  \"b'name=\\\"b\\\\'stuff\\\\'\\\"'\",\n  \"invokefile.py\",\n  \"requests/api.py\",\n  \"requests/sessions.py\",\n  \"requests/models.py\",\n  \"requests/structures.py\",\n  \"requests/utils.py\",\n  \"data={'stuff'.encode('utf-8'): 'elixr'}\",\n  \"files={'file': ('test_requests.py', open(__file__, 'rb'))}\",\n  \"r.prepare()\",\n  \"AssertionError: True is not false\"\n]\n```",
+  "seconds": 0.67,
+  "out_tokens": 175
+ },
+ "psf__requests-1537": {
+  "reply": "```json\n[\n  \"requests/api.py\",\n  \"requests/sessions.py\",\n  \"requests/models.py\",\n  \"requests/packages/urllib3/filepost.py\",\n  \"TypeError: 'float' does not have the buffer interface\",\n  \"prepare_body\",\n  \"_encode_files\",\n  \"encode_multipart_formdata\",\n  \"data={'a': 0.0}, files={'b': 'foo'}\",\n  \"requests.post\",\n  \"requests/models.py\",\n  \"requests/api.py\",\n  \"requests/sessions.py\"\n]\n```",
+  "seconds": 0.64,
+  "out_tokens": 145
+ },
+ "psf__requests-1635": {
+  "reply": "```json\n[\n  \"requests/sessions.py\",\n  \"Session.request\",\n  \"cookies\",\n  \"KeyError: 'cookie'\",\n  \"requests/api.py\",\n  \"requests/models.py\",\n  \"requests/cookies.py\"\n]\n```",
+  "seconds": 0.36,
+  "out_tokens": 66
+ },
+ "psf__requests-1657": {
+  "reply": "```json\n[\n  \"requests/sessions.py\",\n  \"session.hooks\",\n  \"request.hooks\",\n  \"hooks\",\n  \"merge\"\n]\n```",
+  "seconds": 0.28,
+  "out_tokens": 42
+ },
+ "psf__requests-1689": {
+  "reply": "```json\n[\n  \"UnicodeDecodeError: 'utf8' codec can't decode byte 0x89 in position 140: invalid start byte\",\n  \"requests/models.py\",\n  \"requests/compat.py\",\n  \"self.prepare_content_length(body)\",\n  \"l = super_len(body)\",\n  \"self.headers['Content-Length'] = str(l)\",\n  \"str = unicode\"\n]\n```",
+  "seconds": 0.44,
+  "out_tokens": 107
+ },
+ "psf__requests-1713": {
+  "reply": "```json\n[\n  \"requests/api.py\",\n  \"requests/sessions.py\",\n  \"requests/cookies.py\",\n  \"MozillaCookieJar\",\n  \"AttributeError: MozillaCookieJar instance has no attribute '__getitem__'\",\n  \"cookiejar_from_dict\",\n  \"requests.get\",\n  \"cookies=cookiejar\",\n  \"requests/cookies.py\",\n  \"requests/sessions.py\"\n]\n```",
+  "seconds": 0.48,
+  "out_tokens": 103
+ },
+ "psf__requests-1724": {
+  "reply": "```json\n[\n  \"requests/api.py\",\n  \"requests/sessions.py\",\n  \"requests/adapters.py\",\n  \"requests/packages/urllib3/connectionpool.py\",\n  \"requests/packages/urllib3/connectionpool.py\",\n  \"requests/sessions.py\",\n  \"req.method = method.upper()\",\n  \"UnicodeDecodeError: 'ascii' codec can't decode byte 0xcf\",\n  \"requests.request\",\n  \"session.request\",\n  \"method=method\",\n  \"method.upper()\",\n  \"requests/api.py\",\n  \"requests/sessions.py\"\n]\n```",
+  "seconds": 0.83,
+  "out_tokens": 157
+ },
+ "psf__requests-1733": {
+  "reply": "```json\n[\n  \"requests/models.py\",\n  \"Response\",\n  \"__slots__\",\n  \"__getstate__\",\n  \"pickle.dumps(requests.get('http://example.org'))\"\n]\n```",
+  "seconds": 0.47,
+  "out_tokens": 56
+ },
+ "psf__requests-1766": {
+  "reply": "```json\n[\n  \"qop-options\",\n  \"Digest Auth\",\n  \"requests/auth.py\",\n  \"requests/api.py\",\n  \"requests/sessions.py\",\n  \"RFC2617\"\n]\n```",
+  "seconds": 0.37,
+  "out_tokens": 59
+ },
+ "psf__requests-1768": {
+  "reply": "```json\n[\n  \"requests/api.py\",\n  \"requests/auth.py\",\n  \"Basic Auth\",\n  \"401 Unauthorized\",\n  \"urlsplit\",\n  \"auth parameter\",\n  \"requests.auth.HTTPBasicAuth\"\n]\n```",
+  "seconds": 0.4,
+  "out_tokens": 64
+ },
+ "psf__requests-1776": {
+  "reply": "```json\n[\n  \"requests/sessions.py\",\n  \"L330\",\n  \"cookies sent with a request are now incorrectly persisted to the session\",\n  \"Session.cookies\",\n  \"requests.Session\",\n  \"requests.cookies.RequestsCookieJar\"\n]\n```",
+  "seconds": 0.32,
+  "out_tokens": 67
+ },
+ "psf__requests-1888": {
+  "reply": "```json\n[\n  \"requests/adapters.py\",\n  \"resolve_redirects\",\n  \"TypeError: buf must be a byte string\",\n  \"requests.get('https://httpbin.org/status/301')\",\n  \"requests/adapters.py:181\",\n  \"requests/sessions.py\",\n  \"requests/api.py\"\n]\n```",
+  "seconds": 0.45,
+  "out_tokens": 89
+ },
+ "psf__requests-1921": {
+  "reply": "```json\n[\n  \"requests/sessions.py\",\n  \"Session\",\n  \"headers\",\n  \"Accept-Encoding\",\n  \"session.headers['Accept-Encoding'] = None\",\n  \"Accept-Encoding: None\"\n]\n```",
+  "seconds": 0.35,
+  "out_tokens": 58
+ },
+ "psf__requests-1944": {
+  "reply": "```json\n[\n  \"requests/sessions.py\",\n  \"requests/models.py\",\n  \"requests/api.py\",\n  \"requests/adapters.py\",\n  \"resolve_redirects\",\n  \"resp.content\",\n  \"ContentDecodingError\",\n  \"zlib.error: Error -3 while decompressing data: incorrect header check\",\n  \"Received response with content-encoding: gzip, but failed to decode it.\",\n  \"self.raw.stream(chunk_size, decode_content=True)\",\n  \"self.iter_content(CONTENT_CHUNK_SIZE)\",\n  \"requests.exceptions.ContentDecodingError\",\n  \"requests/models.py\",\n  \"requests/sessions.py\"\n]\n```",
+  "seconds": 0.76,
+  "out_tokens": 169
+ },
+ "psf__requests-1962": {
+  "reply": "```json\n[\n  \"requests/sessions.py\",\n  \"r.history\",\n  \"history\",\n  \"list\",\n  \"tuple\",\n  \"Session.history\"\n]\n```",
+  "seconds": 0.3,
+  "out_tokens": 47
+ },
+ "psf__requests-1963": {
+  "reply": "```json\n[\n  \"Session.resolve_redirects\",\n  \"requests/sessions.py\",\n  \"POST /do_something HTTP/1.1\",\n  \"303 See Other\",\n  \"Location: /new_thing_1513\",\n  \"GET /new_thing_1513\",\n  \"307 Temporary Redirect\",\n  \"Location: //failover.example.com/new_thing_1513\",\n  \"original_request\",\n  \"resolve_redirects\"\n]\n```",
+  "seconds": 0.53,
+  "out_tokens": 126
+ },
+ "psf__requests-2148": {
+  "reply": "```json\n[\n  \"socket.error\",\n  \"requests.exceptions.ConnectionError\",\n  \"requests/models.py\",\n  \"requests/sessions.py\",\n  \"requests/api.py\",\n  \"requests/adapters.py\",\n  \"Connection reset by peer\"\n]\n```",
+  "seconds": 0.44,
+  "out_tokens": 70
+ },
+ "psf__requests-2153": {
+  "reply": "```json\n[\n  \"socket.timeout\",\n  \"requests.exceptions.Timeout\",\n  \"requests/api.py\",\n  \"requests/sessions.py\",\n  \"requests/adapters.py\",\n  \"requests/models.py\",\n  \"requests/utils.py\",\n  \"requests.post\",\n  \"send\",\n  \"request\",\n  \"Timeout\",\n  \"socket.timeout\"\n]\n```",
+  "seconds": 0.56,
+  "out_tokens": 99
+ },
+ "psf__requests-2193": {
+  "reply": "```json\n[\n  \"requests.packages.urllib3.exceptions.ProtocolError\",\n  \"requests/sessions.py\",\n  \"requests/api.py\",\n  \"ConnectionRefusedError\",\n  \"requests.get\",\n  \"ProtocolError\"\n]\n```",
+  "seconds": 0.33,
+  "out_tokens": 64
+ },
+ "psf__requests-2317": {
+  "reply": "```json\n[\n  \"requests/sessions.py\",\n  \"builtin_str(method)\",\n  \"method = builtin_str(method)\",\n  \"b\u2019GET\u2019\",\n  \"404 Not Found\",\n  \"requests/utils.py\",\n  \"safe_encode_list\",\n  \"method\"\n]\n```",
+  "seconds": 0.39,
+  "out_tokens": 78
+ },
+ "psf__requests-2393": {
+  "reply": "```json\n[\n  \"requests.get\",\n  \"requests/api.py\",\n  \"percent\",\n  \"url\",\n  \"requests/utils.py\",\n  \"requests/sessions.py\",\n  \"requests/models.py\",\n  \"requests/structures.py\"\n]\n```",
+  "seconds": 0.33,
+  "out_tokens": 71
+ },
+ "psf__requests-2413": {
+  "reply": "```json\n[\n  \"requests/utils.py\",\n  \"requests/compat.py\",\n  \"builtin_str\",\n  \"isinstance(name, builtin_str)\",\n  \"name[0] != '<' and name[-1] != '>'\",\n  \"requests/utils.py:118\",\n  \"str\",\n  \"basestring\"\n]\n```",
+  "seconds": 0.42,
+  "out_tokens": 88
+ },
+ "psf__requests-2466": {
+  "reply": "```json\n[\n  \"ImportError: No module named 'requests.packages.chardet.sys'\",\n  \"requests/packages/__init__.py\",\n  \"requests/utils.py\",\n  \"requests/api.py\",\n  \"requests/sessions.py\",\n  \"requests/adapters.py\",\n  \"requests/exceptions.py\",\n  \"requests/models.py\",\n  \"requests/structures.py\",\n  \"requests/compat.py\",\n  \"chardet\",\n  \"requests.packages.chardet\"\n]\n```",
+  "seconds": 0.75,
+  "out_tokens": 127
+ },
+ "psf__requests-2617": {
+  "reply": "```json\n[\n  \"requests/sessions.py\",\n  \"requests/adapters.py\",\n  \"requests/api.py\",\n  \"requests/models.py\",\n  \"requests/structures.py\",\n  \"UnicodeDecodeError: 'ascii' codec can't decode byte 0xff in position 109: ordinal not in range(128)\",\n  \"request.prepare()\",\n  \"request.files\",\n  \"requests.Session().send(prepared)\",\n  \"unicode_literals\",\n  \"requests/sessions.py\",\n  \"requests/adapters.py\",\n  \"requests/models.py\"\n]\n```",
+  "seconds": 0.64,
+  "out_tokens": 150
+ },
+ "psf__requests-2674": {
+  "reply": "```json\n[\n  \"requests.packages.urllib3.exceptions.DecodeError\",\n  \"requests.packages.urllib3.exceptions.TimeoutError\",\n  \"requests/exceptions.py\",\n  \"requests/sessions.py\",\n  \"requests/api.py\",\n  \"requests/adapters.py\"\n]\n```",
+  "seconds": 0.4,
+  "out_tokens": 77
+ },
+ "psf__requests-2678": {
+  "reply": "```json\n[\n  \"requests.packages.urllib3.exceptions.DecodeError\",\n  \"requests.packages.urllib3.exceptions.TimeoutError\",\n  \"requests/exceptions.py\",\n  \"requests/sessions.py\",\n  \"requests/adapters.py\",\n  \"requests.exceptions.RequestException\"\n]\n```",
+  "seconds": 5.79,
+  "out_tokens": 78
+ },
+ "psf__requests-2754": {
+  "reply": "```json\n[\n  \"requests/api.py\",\n  \"requests/sessions.py\",\n  \"requests/exceptions.py\",\n  \"Redirect /index.html /\u30d6\u30ed\u30b0/\",\n  \"http://test.\u307f\u3093\u306a/\u30d6\u30ed\u30b0\",\n  \"404 Not Found\",\n  \"requests.get\",\n  \"requests\",\n  \"xn--q9jyb4c\",\n  \"requests/models.py\",\n  \"requests/utils.py\",\n  \"requests/sessions.py\",\n  \"requests/api.py\"\n]\n```",
+  "seconds": 0.58,
+  "out_tokens": 127
+ },
+ "psf__requests-2821": {
+  "reply": "```json\n[\n  \"requests/sessions.py\",\n  \"requests/adapters.py\",\n  \"requests/packages/__init__.py\",\n  \"TypeError: cannot make memory view because object does not have the buffer interface\",\n  \"send\",\n  \"adapter.send\",\n  \"timeout=timeout\",\n  \"conn.request\",\n  \"self.endheaders(body)\",\n  \"self._send_output(message_body)\",\n  \"self.sock.sendall(data)\",\n  \"memoryview(data)\",\n  \"requests.Session.send\",\n  \"requests.adapters.HTTPAdapter.send\"\n]\n```",
+  "seconds": 0.68,
+  "out_tokens": 146
+ },
+ "psf__requests-2873": {
+  "reply": "```json\n[\n  \"requests/sessions.py\",\n  \"requests/api.py\",\n  \"requests/models.py\",\n  \"StringIO\",\n  \"data=\",\n  \"requests.post\",\n  \"seek(0)\",\n  \"requests/sessions.py\",\n  \"Request\",\n  \"body\",\n  \"data\",\n  \"read\",\n  \"requests/api.py\",\n  \"Session\"\n]\n```",
+  "seconds": 0.57,
+  "out_tokens": 103
+ },
+ "psf__requests-2931": {
+  "reply": "```json\n[\n  \"requests/adapters.py\",\n  \"to_native_string\",\n  \"requests.put\",\n  \"data=u\\\"\u00f6\u00f6\u00f6\\\".encode(\\\"utf-8\\\")\"\n]\n```",
+  "seconds": 0.32,
+  "out_tokens": 52
+ },
+ "psf__requests-3362": {
+  "reply": "```json\n[\n  \"iter_content\",\n  \"decode_unicode=True\",\n  \"r.text\",\n  \"requests/sessions.py\",\n  \"requests/models.py\",\n  \"requests/api.py\"\n]\n```",
+  "seconds": 0.33,
+  "out_tokens": 59
+ },
+ "psf__requests-3718": {
+  "reply": "```json\n[\n  \"AttributeError: 'NoneType' object has no attribute 'read'\",\n  \"requests/models.py\",\n  \"requests/api.py\",\n  \"requests/sessions.py\",\n  \"requests/models.py:772\",\n  \"requests/models.py:705\",\n  \"self.raw.read(chunk_size)\",\n  \"requests.models.Response.iter_content\",\n  \"requests.models.Response.content\"\n]\n```",
+  "seconds": 0.66,
+  "out_tokens": 116
+ },
+ "psf__requests-3738": {
+  "reply": "```json\n[\n  \"requests/sessions.py\",\n  \"Session\",\n  \"URL\",\n  \"scheme\",\n  \"requests.utils.urlparse\",\n  \"requests.utils.urlencode\",\n  \"unrecognized schemes\",\n  \"http+unix\",\n  \"requests/api.py\",\n  \"requests/models.py\",\n  \"requests/utils.py\",\n  \"requests/sessions.py\",\n  \"Session.prepare_url\",\n  \"URL.parse\"\n]\n```",
+  "seconds": 0.62,
+  "out_tokens": 119
+ },
+ "psf__requests-4106": {
+  "reply": "```json\n[\n  \"AttributeError: module 'requests.packages' has no attribute 'urllib3'\",\n  \"requests.packages.urllib3\",\n  \"requests/packages.py\",\n  \"requests/__init__.py\"\n]\n```",
+  "seconds": 0.35,
+  "out_tokens": 58
+ },
+ "psf__requests-4356": {
+  "reply": "```json\n[\n  \"requests/api.py\",\n  \"requests/sessions.py\",\n  \"requests/adapters.py\",\n  \"https_proxy\",\n  \"HTTP_PROXY\",\n  \"requests.get\",\n  \"session.request\",\n  \"adapter.send\",\n  \"AttributeError: 'NoneType' object has no attribute 'startswith'\",\n  \"requests/utils.py\",\n  \"requests/models.py\",\n  \"requests/compat.py\"\n]\n```",
+  "seconds": 0.63,
+  "out_tokens": 115
+ },
+ "psf__requests-4718": {
+  "reply": "```json\n[\n  \"requests/sessions.py\",\n  \"rebuild_auth\",\n  \"Authorization header\",\n  \"https -> http redirect\",\n  \"scheme is changed from https to http\",\n  \"requests.get('https://localhost:4443', auth=('hello', 'world'), verify=False)\",\n  \"requests/api.py\",\n  \"requests/models.py\",\n  \"requests/sessions.py\",\n  \"Session\",\n  \"request\",\n  \"response\"\n]\n```",
+  "seconds": 0.63,
+  "out_tokens": 120
+ },
+ "psf__requests-5087": {
+  "reply": "```json\n[\n  \"requests/models.py\",\n  \"Response\",\n  \"content\",\n  \"response.content\",\n  \"test_response_content_retains_error\",\n  \"requests.post\",\n  \"stream=True\"\n]\n```",
+  "seconds": 0.48,
+  "out_tokens": 63
+ },
+ "psf__requests-5414": {
+  "reply": "```json\n[\n  \"UnicodeError: encoding with 'idna' codec failed (UnicodeError: label empty or too long)\",\n  \"requests/models.py\",\n  \"InvalidUrl\",\n  \"requests.get(\\\"http://.example.com\\\")\"\n]\n```",
+  "seconds": 0.4,
+  "out_tokens": 64
+ },
+ "psf__requests-6028": {
+  "reply": "```json\n[\n  \"requests/adapters.py\",\n  \"requests/sessions.py\",\n  \"407\",\n  \"Proxy authentication bug\"\n]\n```",
+  "seconds": 0.3,
+  "out_tokens": 41
+ },
+ "psf__requests-774": {
+  "reply": "```json\n[\n  \"requests/api.py\",\n  \"requests/safe_mode.py\",\n  \"requests/sessions.py\",\n  \"requests/models.py\",\n  \"UnicodeError: label empty or too long\",\n  \"netloc.encode('idna').decode('utf-8')\",\n  \"requests/models.py\",\n  \"full_url\",\n  \"send\",\n  \"request\",\n  \"head\",\n  \"request('head', url, **kwargs)\",\n  \"return s.request(method=method, url=url, **kwargs)\",\n  \"return function(method, url, **kwargs)\"\n]\n```",
+  "seconds": 0.65,
+  "out_tokens": 151
+ },
+ "psf__requests-863": {
+  "reply": "```json\n[\n  \"requests/sessions.py\",\n  \"Request.__init__\",\n  \"hooks argument\",\n  \"register_hook()\",\n  \"list of hook functions\",\n  \"Request.__init__()\",\n  \"hooks parameter\"\n]\n```",
+  "seconds": 0.43,
+  "out_tokens": 62
+ }
+}

@@ -47,6 +47,21 @@ Real GitHub issues from SWE-bench (`princeton-nlp/SWE-bench`, test split). There
 
 - **K2** asks Gemma 4 12B, running locally through Ollama, to list what to search for. It sees the issue and the repo's file list, and nothing else. Its keywords then go through the same ranking as K1. The replies are cached in `data/gemma_keywords.json`, so reruns need no GPU. Run with `.venv\Scripts\python run.py --gemma`.
 
+### Model size check (E4B, E2B)
+
+Same 55 issues, same prompt and ranking; only the model picking the keywords changes. Run with `.venv\Scripts\python run.py --gemma gemma4:12b gemma4:e4b gemma4:e2b`. Each model's replies are cached in `data/keywords_<model>.json` (12B keeps `data/gemma_keywords.json`). These are Ollama Q4_K_M builds, not the competition's QAT checkpoints, so treat this as a code check and an early signal only.
+
+| Keywords from | Hit@1 | Hit@3 | Merged with K1 (Hit@1) | Seconds per issue | Empty replies |
+|---|---|---|---|---|---|
+| K1 rules (no model) | 69% | 91% | – | 0 | – |
+| Gemma 4 12B | **80%** | **93%** | 73% | not timed | 0/55 |
+| Gemma 4 E4B | 69% | 85% | 71% | 1.1 | 0/55 |
+| Gemma 4 E2B | 71% | 80% | 69% | 0.4 | 0/55 |
+
+- 12B is clearly ahead. E4B and E2B only match the rules at Hit@1, and their Hit@3 falls with size (93 → 85 → 80).
+- Merging the rules' keywords hurts 12B (−7) but moves E4B and E2B by only ±1 issue, which is noise at n = 55.
+- No model returned an unusable reply, so output-format failures aren't what holds the small models back here.
+
 **Reading it:**
 - **Gemma picking the search terms is the best method: 80% right file first,** against 69% for the rules and 58% for BM25. It fixes the cases where a big central file wins (3 of the 4 flask misses), because it names the specific function to look for instead of every word in the issue.
 - Merging the rules' keywords into Gemma's makes it *worse* (73%), because the rules' plain words add noise. A better merge, for example taking only the rules' code names, is a next step.

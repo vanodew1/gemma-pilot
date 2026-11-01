@@ -4,6 +4,7 @@ Usage:
     python run.py                 # all instances in data/instances.jsonl
     python run.py --trace psf__requests-2317   # one issue, end to end
     python run.py --gemma         # also K2: Gemma 4 12B (Ollama) suggests keywords
+    python run.py --gemma gemma4:12b gemma4:e4b gemma4:e2b   # K2 rows for each model size
 """
 import argparse
 import csv
@@ -24,7 +25,17 @@ REPOS = {"psf/requests": ROOT / "repos/requests", "pallets/flask": ROOT / "repos
 KS = (1, 3, 5)
 WINDOW = 10  # lines of context either side of a hit, as the agent would open
 GEMMA = "gemma4:12b"
-GEMMA_CACHE = ROOT / "data/gemma_keywords.json"
+
+
+def gemma_cache_path(model):
+    """Cached replies per model; the 12B keeps its original file so old results reproduce."""
+    if model == GEMMA:
+        return ROOT / "data/gemma_keywords.json"
+    return ROOT / f"data/keywords_{model.replace(':', '-')}.json"
+
+
+def size_label(model):
+    return model.split(":")[-1].upper()
 GEMMA_PROMPT = """You are helping fix a bug in a Python repository. Below are the bug report and the
 repository's source files. List the strings to grep the repository for to find the code that
 must change: function, class and variable names, file paths from the list, and exact error
@@ -38,19 +49,25 @@ BUG REPORT:
 {issue}"""
 
 
-def gemma_keywords(inst, files, cache):
-    """Gemma's suggested keywords for one issue, cached by instance_id (raw reply kept)."""
+def gemma_reply(inst, files, model, cache):
+    """Gemma's raw reply for one issue, cached by instance_id.
+
+    New entries also keep call time and output tokens; older 12B entries are bare strings.
+    """
     iid = inst["instance_id"]
     if iid not in cache:
         prompt = GEMMA_PROMPT.format(files="\n".join(sorted(files)), issue=inst["problem_statement"][:6000])
-        body = json.dumps({"model": GEMMA, "stream": False, "think": False,
+        body = json.dumps({"model": model, "stream": False, "think": False,
                            "options": {"temperature": 0, "num_ctx": 8192},
                            "messages": [{"role": "user", "content": prompt}]}).encode()
         req = urllib.request.Request("http://localhost:11434/api/chat", body, {"Content-Type": "application/json"})
         with urllib.request.urlopen(req, timeout=600) as resp:
-            cache[iid] = json.load(resp)["message"]["content"]
-        GEMMA_CACHE.write_text(json.dumps(cache, indent=1), encoding="utf-8")
-    return parse_llm_keywords(cache[iid])
+            out = json.load(resp)
+        cache[iid] = {"reply": out["message"]["content"], "seconds": round(out["total_duration"] / 1e9, 2),
+                      "out_tokens": out.get("eval_count")}
+        gemma_cache_path(model).write_text(json.dumps(cache, indent=1), encoding="utf-8")
+    entry = cache[iid]
+    return entry if isinstance(entry, dict) else {"reply": entry}
 
 
 def is_source(path):
@@ -140,8 +157,8 @@ def tokenize(text):
     return [t.lower() for t in re.findall(r"[A-Za-z_][A-Za-z0-9_]+", text)]
 
 
-def run_methods(inst, files, gemma_cache=None):
-    """{method: (ranked paths, lines opened)} for one instance."""
+def run_methods(inst, files, gemma_caches=None):
+    """{method: (ranked paths, lines opened, model call or None)} for one instance."""
     paths = sorted(files)
     issue = inst["problem_statement"]
     rng = random.Random(inst["instance_id"])
@@ -160,19 +177,22 @@ def run_methods(inst, files, gemma_cache=None):
 
     b0 = rng.sample(paths, len(paths))
     methods = {
-        "B0 random": (b0, lines_opened(b0, files)),
-        "B1 BM25 (whole files)": (b1, lines_opened(b1, files)),
-        "K0 keyword search, no def bonus": (k0, lines_opened(k0, files, k1_kws)),
-        "K1 keyword search": (k1, lines_opened(k1, files, k1_kws)),
-        "K1 + retry clues": (r, lines_opened(r, files, r_kws)),
+        "B0 random": (b0, lines_opened(b0, files), None),
+        "B1 BM25 (whole files)": (b1, lines_opened(b1, files), None),
+        "K0 keyword search, no def bonus": (k0, lines_opened(k0, files, k1_kws), None),
+        "K1 keyword search": (k1, lines_opened(k1, files, k1_kws), None),
+        "K1 + retry clues": (r, lines_opened(r, files, r_kws), None),
     }
-    if gemma_cache is not None:
-        g_kws = gemma_keywords(inst, files, gemma_cache)
+    for model, cache in (gemma_caches or {}).items():
+        call = gemma_reply(inst, files, model, cache)
+        g_kws = parse_llm_keywords(call["reply"])
+        call = {**call, "n_keywords": len(g_kws)}
         g = [p for p, _ in rank_files(g_kws, files)]
         merged = list({k.term: k for k in g_kws + k1_kws}.values())  # Gemma's kind wins on overlap
         m = [p for p, _ in rank_files(merged, files)]
-        methods["K2 Gemma keywords only"] = (g, lines_opened(g, files, g_kws))
-        methods["K1 + K2 Gemma keywords"] = (m, lines_opened(m, files, merged))
+        size = size_label(model)
+        methods[f"K2 Gemma {size} keywords only"] = (g, lines_opened(g, files, g_kws), call)
+        methods[f"K1 + K2 Gemma {size} keywords"] = (m, lines_opened(m, files, merged), call)
     return methods
 
 
@@ -181,22 +201,25 @@ def load_instances():
         return [json.loads(line) for line in f]
 
 
-def evaluate(use_gemma=False):
-    gemma_cache = None
-    if use_gemma:
-        gemma_cache = json.loads(GEMMA_CACHE.read_text(encoding="utf-8")) if GEMMA_CACHE.exists() else {}
+def evaluate(models=()):
+    gemma_caches = {}
+    for model in models:
+        path = gemma_cache_path(model)
+        gemma_caches[model] = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
     rows = []
     for inst in load_instances():
         files = files_at(REPOS[inst["repo"]], inst["base_commit"])
         gold = gold_files(inst["patch"]) & set(files)
         if not gold:
             continue  # fix touched only non-source files
-        for method, (ranked, cost) in run_methods(inst, files, gemma_cache).items():
+        for method, (ranked, cost, call) in run_methods(inst, files, gemma_caches).items():
+            call = call or {}
             row = {"instance_id": inst["instance_id"], "method": method, "n_files": len(files),
                    "gold": " ".join(sorted(gold)), "top5": " ".join(ranked[:5]), "lines_opened": cost}
             for k in KS:
                 row[f"hit@{k}"] = int(hit_at_k(ranked, gold, k))
             row["recall@5"] = round(recall_at_k(ranked, gold, 5), 3)
+            row.update({key: call.get(key, "") for key in ("n_keywords", "seconds", "out_tokens")})
             rows.append(row)
         print(f"{inst['instance_id']}: {len(files)} files, gold={sorted(gold)}")
     return rows
@@ -221,6 +244,19 @@ def write_results(rows):
         mean = lambda key: sum(r[key] for r in rs) / len(rs)
         lines.append(f"| {m} | {mean('hit@1'):.0%} | {mean('hit@3'):.0%} | {mean('hit@5'):.0%} "
                      f"| {mean('recall@5'):.0%} | {mean('lines_opened'):,.0f} |")
+
+    model_rows = [m for m in methods if m.startswith("K2 ")]
+    if model_rows:
+        lines += ["\nGemma call cost per issue (time and tokens only for replies cached with timing).\n",
+                  "| Model | Replies with no usable keywords | Mean keywords | Mean seconds | Mean output tokens |",
+                  "|---|---|---|---|---|"]
+        for m in model_rows:
+            rs = [r for r in rows if r["method"] == m]
+            timed = [r for r in rs if r["seconds"] != ""]
+            avg = lambda key, rs: f"{sum(r[key] for r in rs) / len(rs):.1f}" if rs else "n/a"
+            empty = sum(r["n_keywords"] == 0 for r in rs)
+            lines.append(f"| {m.split(' ')[2]} | {empty}/{len(rs)} | {avg('n_keywords', rs)} "
+                         f"| {avg('seconds', timed)} | {avg('out_tokens', timed)} |")
     (out / "results.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print("\n".join(lines))
 
@@ -272,9 +308,11 @@ def trace(instance_id):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--trace", help="instance_id to trace end to end")
-    ap.add_argument("--gemma", action="store_true", help="add K2 rows (needs `ollama serve` with gemma4:12b)")
+    ap.add_argument("--gemma", nargs="*", metavar="MODEL",
+                    help=f"add K2 rows per Ollama model (default {GEMMA}); uncached issues need `ollama serve`")
     args = ap.parse_args()
     if args.trace:
         trace(args.trace)
     else:
-        write_results(evaluate(args.gemma))
+        models = [] if args.gemma is None else (args.gemma or [GEMMA])
+        write_results(evaluate(models))
