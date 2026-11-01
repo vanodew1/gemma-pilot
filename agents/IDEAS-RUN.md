@@ -146,3 +146,82 @@ stateDiagram-v2
     Submitted --> Finding: next task
     Submitted --> [*]: last task scored
 ```
+
+### 8. Arena: the paper plan (pstack:arena; Opus/Sonnet/Haiku runners, Sonnet cross-judge)
+
+- **Convergence:** all three runners independently chose **"Pick, Don't Write"**.
+- **Base:** the Opus candidate (the judge agreed). It has the most faithful caveats, the cheapest compute (under 2 GPU-hours) and an early kill date.
+- **Grafts:**
+  - from Sonnet: start the fallback's CPU work on Nov 3–4; add the S1-paths arm
+  - from Haiku: kill check on whether vLLM reproduces the pilot ordering; an input-token fairness column; the official Kaggle search tools as an arm (already approved as Q23)
+  - from my own check: a reversed-order arm
+- **Rejected:** the Haiku plan's full "G+" fixes ladder, whose fixes are known prior art and dilute the claim.
+
+**Title (working):** *Pick, Don't Write: Small Gemma 4 Models Localize Bugs Better by Choosing Than by Searching*
+
+**Claim:** on the competition's dev tasks, with retrieval held fixed, untrained Gemma 4 E2B and E4B find the file to fix more often by **picking** one of 5 outline-rendered candidates than by **writing search words**, and the gain survives on tasks the model can't answer from memory.
+
+**Method:**
+- **Gold:** non-test files touched by the reference patch; tasks with none are dropped and counted.
+- **Freeze before data arrives:** rules, scorer, prompts, k and the analysis script, all tagged in one commit (preregistration).
+- **Candidates:** path plus up to 25 class/def signatures.
+- **Runtime:** vLLM with the official QAT checkpoints, thinking off, temperature 0, replies cached.
+
+**Arms** (each run on E2B, E4B and 12B; n ≈ 129):
+
+| Arm | What happens | Calls per task |
+|---|---|---|
+| Random, BM25, K1 rules, official Kaggle search | no model | 0 |
+| G | model writes search words; the frozen scorer ranks | 1 |
+| N | G, with files the model named moved first (control) | 0 extra |
+| **S1** | model picks from the K1 top 5, shown as outlines | 1 |
+| S1-reversed / S1-vote | same 5 candidates in reversed and shuffled orders; majority vote | 3 |
+| S1-paths | bare paths, no outlines (do outlines matter?) | 1 |
+| S1-masked | outlines with the paths hidden (memory control) | 1 |
+| S2 | picks from its own G top 5 | 1 |
+| P | names the file from the issue alone (memory probe) | 1 |
+
+**Statistics:**
+- Primary: S1 vs G and S1 vs K1 per size, exact McNemar, Holm-corrected across sizes.
+- Paired bootstrap CIs for every difference.
+- Whether the gap shrinks with size is reported as descriptive only.
+- S1 − G on the tasks where the memory probe misses.
+- Report input tokens per arm, since S1 sees more text.
+- Differences under about 8 points can't be resolved at n = 129, and the paper says so.
+
+**Headline figure:**
+- Left: Hit@1 vs size; lines for G, S1 and S1-masked; flat bands for K1, BM25 and the pool ceiling; dashed line for the memory probe.
+- Right: the S1 − G gain with CIs, split into tasks the model memorized and tasks it didn't.
+
+**Kill criteria** (checked the evening of Nov 5):
+1. The K1 pool contains the gold file in its top 5 for under 85% of tasks.
+2. E4B S1 − G is under +5 points and its CI includes 0.
+3. The gain exists only on memorized tasks.
+4. vLLM QAT doesn't reproduce the pilot ordering. Then use Ollama and disclose it.
+
+**Fallback paper (Best New Resource):** "What the Dev Set Hides". File- and function-level gold mapped onto the official graph nodes, the memory probe by size, and an offline audit of the official graph and embedding tools against BM25 and K1. Its CPU-only parts start Nov 3–4, so the fallback is half-built by the kill check.
+
+**Schedule:**
+
+| Day | Work |
+|---|---|
+| Nov 3 | data; freeze and tag; gold labels; vLLM check; start the fallback CPU work |
+| Nov 4 | floors, pool ceiling, memory probe |
+| Nov 5 | main arms; kill check |
+| Nov 6 | controls (masked, paths, reversed and vote, k = 10 on E4B); tool audit |
+| Nov 7 | figures; you two hand-read 20 E4B losses |
+| Nov 8–10 | you write; claims checked against the script output |
+| Nov 11 | submit |
+
+**Feeds:**
+- **E4B agent:** `locate.py` prints the 5 lettered outlines and E4B answers with a letter. The paper's E4B S1 Hit@1 is the agent's expected step-one accuracy.
+- **Course report:** the related work (2410.17820, BLAgent, SweRank) is the literature review, the floors are the baselines, and the size table is the interim result.
+
+**Threats to validity:**
+- memorization (public dev repos vs private test repos)
+- only 4 repos
+- the rules were tuned on requests, so also report numbers with requests excluded
+- statistical power
+- S1 is capped by the pool ceiling
+- prompt sensitivity
+- file level only, not resolve rate
