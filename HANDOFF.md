@@ -2,6 +2,14 @@
 
 Context for picking this work up in a new session.
 
+## What's in this repo
+
+- Pilot code (root): `pilot.py`, `run.py`, `tests/`, `data/`, `results/`. See `README.md`.
+- `docs/course-rubric.pdf`: the course project rubric. `docs/project-proposal.pdf`: our proposal (Areesha Ashfaq, Syed Ibad Asim).
+- `research/pilot-and-gemma-plan.md`: research notes on the pilot plan, competition rules and running Gemma locally.
+- `partner-demo/`: partner's agent demo (`agent.py`, toy `demoRepo/`, run logs in `runs/`). See its `README.md`.
+- `demo-notes/index.html`: one-page notes with both results tables for the professor demo (open in a browser).
+
 ## Project
 
 CS/CE 351/363 AI, Fall 2026, Group 9: "Improving a Gemma 4 coding agent".
@@ -27,7 +35,7 @@ This repo is the small pilot of step (A) that the professor asked for.
   ```
   (On the home PC use `.venv\Scripts\python`.)
 
-## Partner's demo agent (not in this repo)
+## Partner's demo agent (`partner-demo/`)
 
 A JSON-action agent (tools: listFiles, readFile, searchCode, editFile, runTests; modes baseline/search/retry/both) on a toy shop app with a planted discount bug. All 4 modes fixed it (7–10 steps, 52–78 s). Retry never triggered because the bug is easy. `--mode all` can crash Ollama (`std::bad_alloc`); workaround: `ollama stop gemma4:12b` between modes.
 
