@@ -75,6 +75,21 @@ ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
   </section>
 
   <section>
+    <h2>Test 1b · Gemma writes search words vs Gemma picks from 5 files</h2>
+    <p>Same 55 bugs. Hit@1 by model size.</p>
+    <div class="wrap"><table>
+      <thead><tr><th>Model</th><th>Rules only (K1)</th><th>Gemma writes words</th><th>Gemma picks from K1's top 5</th><th>Memory only (no files shown)</th></tr></thead>
+      <tbody>
+        <tr><td>E2B</td><td class="n">69%</td><td class="n">71%</td><td class="n"><b>78%</b></td><td class="n">38%</td></tr>
+        <tr><td>E4B</td><td class="n">69%</td><td class="n">69%</td><td class="n"><b>80%</b></td><td class="n">64%</td></tr>
+        <tr><td>12B</td><td class="n">69%</td><td class="n">80%</td><td class="n"><b>85%</b></td><td class="n">64%</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">Picks from 5 = Gemma sees each file's path plus its class and function names, and picks one. Memory only = Gemma names the file from the bug report alone, with no file list. The right file was in K1's top 5 for 54 of 55 bugs.</p>
+    <p class="note">Caveat: only 12B vs rules is statistically significant (p = 0.02). Public repos, so the models may have memorized them; to be re-tested on the competition's tasks.</p>
+  </section>
+
+  <section>
     <h2>Test 2 · Full agent on a small demo project</h2>
     <p>A toy shop app with one planted discount bug. Tests decide if it's fixed.</p>
     <div class="wrap"><table>
