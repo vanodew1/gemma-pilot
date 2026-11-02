@@ -308,8 +308,30 @@ The skill rule is that skill and memory edits need your explicit OK, so **none o
 
 **Decisions for you:**
 1. Approve "Pick, Don't Write" as the paper direction, to be re-tested on the 129 competition tasks, with the kill check on Nov 5? Or keep the original size-ladder-plus-fixes plan?
-2. Rewrite `afdda61` and `6d531e4` to remove the Claude lines? This needs a force-push.
+2. ~~Rewrite the commits with Claude lines~~ **Done (see section 12).**
 3. Keep or delete the `design/` scaffold?
 4. Which reflect edits (R1–R10) do you approve?
 5. Still blocking everything: Kaggle face verification plus `kaggle.json`, then the 22 GB data download.
 6. Still open from the grilling: Q24–Q27 and the RA question about AI tools.
+
+### 12. After the run (user follow-ups, 2026-11-02)
+
+**Claude lines removed from GitHub history:**
+- The `Co-Authored-By: Claude` and `Claude-Session` lines are stripped from every commit, and the rewritten history is force-pushed.
+- GitHub now shows 0 of them, all commits are by vanodew1, and the file contents are unchanged.
+- **Laptop:** if you already cloned, run `git fetch && git reset --hard origin/master`.
+- A local backup tag `backup/pre-scrub-2026-11-02` exists on the home PC only; delete it once you're happy.
+- Still present: the file name `CLAUDE.md` and mentions inside the notes. Ask if you want those removed.
+
+**Is "Pick, Don't Write" viable on the competition data?** Yes, with one number that decides it.
+- **The data:** the paper runs on the 129 public practice tasks (fastapi, rich, requests, httpx), each with its real fix. The roughly 120 hidden test tasks come from private repos and can only be reached by submitting the agent.
+- **For it:**
+  - 129 tasks can detect gaps of about 8–10 points; the pilot gaps were about 11.
+  - Gold files come from the reference fixes.
+  - A method that works by reading outlines should carry over to unseen private repos better than memory does, which is a good story for judges.
+- **Make-or-break check:** how often the right file is in the rules' top 5 on these bigger repos. The pilot repos had about 17 files; fastapi and rich are much bigger. It takes minutes and no GPU, so **run it first** once the data is down. If it's too low, try the top 10.
+- **Other risks:**
+  - memorization, since all 4 repos are public (handled by the paths-hidden arm and the memorized/not-memorized split)
+  - only 4 repos (report per repo)
+
+**Next session starts with:** Kaggle verification and `kaggle.json`, then the download, then the top-5 check, then the decision on the direction.
