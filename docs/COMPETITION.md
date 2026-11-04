@@ -1,6 +1,12 @@
-# Gemma 4 Developer Agent: rules verified from primary sources
+# Competition and course facts
 
-Checked 2026-11-02. Facts only.
+Everything about the two Kaggle competitions and the course rubric, in one place. Facts only; decisions live in `DECISIONS.md`.
+
+Competition rules were checked against Kaggle's own pages on 2026-11-02. Recheck anything marked [SECONDARY] or [UNVERIFIED] before relying on it.
+
+**Key dates (UTC):**
+- Paper track: **2026-11-12 23:59**. Also the last day to join or merge teams.
+- Main track: join and merge by **2026-11-25 23:59**; final submission **2026-12-02 23:59**.
 
 **Method.** The Kaggle pages render with JavaScript, but Kaggle's own web backend (`https://www.kaggle.com/api/i/...`, the JSON API the site calls) answers anonymous requests that carry the site's XSRF cookie. The following were pulled verbatim from it:
 - the competition metadata (`competitions.CompetitionService/GetCompetition`)
@@ -139,7 +145,7 @@ Short names for the URLs:
   - `HARNESS_README.md`: about 55.7k characters [SECONDARY]
 - The hidden test set uses "identical graph generation methods". [PRIMARY]
 - Local-environment caveat: in a plain notebook only 52/129 gold patches pass, but 127/129 pass in a scorer-like sandbox. The cause is missing test dependencies such as `typing_inspection` and `dirty_equals`. [SECONDARY] M/d/751487, M/d/747248
-- The size "22.42 GB" in the earlier notes is still [SECONDARY]; it was not checked here.
+- Total download size: about 22.42 GB [SECONDARY, not checked].
 
 ## 6. Public notebooks and discussion tips
 
@@ -172,19 +178,44 @@ All [SECONDARY] unless marked. Scores are as the authors state them.
 - **Scorer test conventions:** `-p no:anyio`, pytest.ini overwrite, and every `.py` in `test_patch` run as a target. Don't rely on the repo's pytest config or async plugins. M/d/751707
 - **Data leak in local runs:** on public rich tasks the `rich-15.0.0` wheel holds the upstream fixes. Drop trajectories that read outside `/workspace`. M/d/747248
 
----
+## 7. Course rubric (CS/CE 351/363 AI, Fall 2026)
 
-## Changes vs earlier notes (`pilot-and-gemma-plan.md` §2, §6)
+Source: `docs/course-rubric.pdf`. Our proposal is `docs/project-proposal.pdf` (Group 9: Areesha Ashfaq, Syed Ibad Asim). Note: the two PDFs were originally downloaded with each other's file names; the names here are correct.
 
-1. **Model conflict resolved:** all four variants (31B, 12B, E4B, E2B) are allowed on the main track [PRIMARY]. The "31B required" claim is outdated; smaller models were added on 2026-10-11.
-2. **New: a $10k small-model bonus** (E2B/E4B). The total prize pool on the Prizes page is **$110,000** ($65k + $35k + $10k), not $100k.
-3. **Distillation:** the earlier notes said "no ruling as of 2026-10-17". In fact an **admin answered on 2026-09-29**: allowed if the provider's licence terms are followed [PRIMARY]. A second thread (M/d/749585) has no host reply.
-4. **Public split is exactly 58 tasks** [DERIVED]. The leaderboard now has 4,355 teams, a top score of 0.29 and a median of 0.15.
-5. **Word limit details** are now confirmed: captions, tables, title and abstract count; figures and references do not. A PDF is judged on its own.
-6. **Two writeups per team** is confirmed by the host, but the form currently allows only one at a time (unresolved).
-7. **Paper Track model rule:** confirmed that the official text names no model [PRIMARY]. There is still no host answer on smaller models (P/d/749202).
-8. **Cross-competition team membership:** still no host statement. "Only one Team" is a per-competition rule; no rule text mentions the other competition.
-9. **"30 h/week" quota:** scored submissions reportedly do not use the personal quota [SECONDARY]. L4x4 interactive use at 2× is [PRIMARY].
-10. **New:** at most one pending submission per team; queue waits of 14–33 h in October.
-11. **New:** private score = best of the two final picks [PRIMARY]. The training repos do not appear in the test set [PRIMARY].
-12. **Paper Track timeline:** start date 2026-09-22; deadline 2026-11-12 23:59 UTC is confirmed [PRIMARY].
+The project is worth 20 points:
+- Proposal: 1
+- Interim (Week 13): 3
+- Peer evaluation: 2
+- Final demo (Week 16): 14
+  - problem formulation: 2
+  - literature review (3 papers): 3
+  - training, testing and results: 2
+  - **presentation: 5**
+  - report written as a research paper, checked for AI-generated text: 2
+
+Other rubric requirements:
+- Groups are meant to have **three** members. We are two, so get the RA to confirm this.
+- Show **technical rigor, novelty and evaluation** explicitly.
+- "Compare it against a simple baseline, evaluate it with the competition's metric."
+- The proposal's line that only 31B is allowed is wrong (see section 1).
+
+## 8. Running Gemma locally
+
+**Home PC:** RTX 5070 Ti, 16 GB VRAM. Ollama models at `D:\OllamaModels` (gemma4:12b, e4b, e2b). WSL2 Ubuntu and Docker Desktop are installed. Close games and overlays first: on 2026-10-30 they already used 4.4 GB of VRAM.
+
+**Weights-only memory** (20% overhead, no KV cache), from ai.google.dev/gemma/docs/core [PRIMARY]:
+
+| Model | BF16 | 8-bit | 4-bit |
+|---|---|---|---|
+| E4B | 17.9 GB | 8.9 GB | 4.5 GB |
+| 12B | 26.7 GB | 13.4 GB | 6.7 GB |
+| 26B A4B | 57.7 GB | 28.8 GB | 14.4 GB |
+| 31B | 69.9 GB | 34.9 GB | 17.5 GB |
+
+So 12B at 4-bit fits in 16 GB with a 32K context; 31B doesn't.
+
+**Runtimes:**
+- **vLLM in WSL2** with `google/gemma-4-{e2b,e4b,12b}-it-qat-w4a16-ct`: the same runtime and checkpoints as Kaggle. Use it for every number that goes in the paper. The 12B needs `--hf-overrides` (section 1). vLLM doesn't run on Windows natively, and Blackwell needs CUDA 12.8 or later.
+- **Ollama** (`gemma4:12b`, Q4_K_M, not QAT): quick checks only. Run one model per process and `ollama stop` between models; `--mode all` in the partner demo can crash with `std::bad_alloc`.
+- PyTorch on this GPU needs a cu128-or-newer wheel. Avoid `torch.compile` on Windows.
+- Keep models and caches on `D:`; `C:` has only about 20 GB free.

@@ -10,7 +10,7 @@ description: Symbolically check the code that turns Gemma replies into paper num
 
 ## Run
 
-From the repo root, with the venv (CrossHair 0.0.112, installed via `pip install crosshair-tool`):
+From `pilot/`, with the venv (CrossHair 0.0.112, installed via `pip install crosshair-tool`):
 
 ```sh
 PYTHONPATH=. .venv/Scripts/python -m crosshair check --analysis_kind=asserts --per_condition_timeout=20 verification/metric_contracts.py
@@ -27,7 +27,7 @@ It takes about 1–2 minutes.
 |---|---|---|
 | `parse_order_is_a_permutation` | `experiments.py`: `parse_order`, `answer_list` | Whatever the model replies, the result is an ordering of exactly the n candidates |
 | `named_first_is_a_permutation` | `experiments.py`: `named_first` | The no-call rerank returns the same files, reordered |
-| `hit_at_k_matches_definition` | `pilot.py`: `hit_at_k` | Hit@k is true exactly when a gold file is in the top k, and never drops as k grows |
+| `hit_at_k_matches_definition` | `pilot/pilot.py`: `hit_at_k` | Hit@k is true exactly when a gold file is in the top k, and never drops as k grows |
 | `recall_is_a_fraction` | `pilot.py`: `recall_at_k` | Recall@k is in [0, 1], and equals 1 only when every gold file is in the top k |
 
 **Bounds:** n ≤ 6 candidates, ≤ 6 ranked files, ≤ 3 gold files, ≤ 3 path keywords, and CrossHair's 20 s per condition. A pass is a bounded symbolic search, not a proof for every size.
