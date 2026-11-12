@@ -9,9 +9,9 @@ One-file summary of everything decided and researched on 2026-11-02. The detaile
 
 | # | Decision |
 |---|---|
-| Goal | Course grade is the floor; never trade it away. Bets to win: paper-track prize (main), E4B small-model bonus (stretch). Main-track top 3 dropped. |
+| Goal | Course grade is the floor; never trade it away. Updated 2026-11-09: after course work, aim for the highest main leaderboard score, with one final slot on the small-model bonus. Paper track dropped. |
 | Model | Develop on Gemma 4 12B. Main-track submissions also tried on E4B for the bonus; if E4B can't beat ~0.10 by about Nov 25, switch all submissions to 12B. |
-| Priority | Course deliverables first, except a submission due that day or the paper deadline. |
+| Priority | Course deliverables first, except a submission due that day. All other time goes to the main track. |
 | Team | Team of 2. Get the RA to confirm this in writing. Both join the paper track as one team before Nov 12. |
 | Paper angle | "Where does a small Gemma 4 model break as the search-word picker, and which cheap fixes bring it back?" |
 | Data | Python only for now; many repos, a few hundred issues. Lock the method before testing on new data. |
