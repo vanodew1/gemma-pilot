@@ -60,7 +60,7 @@ Fixed 7 of 26 practice bugs on Ollama and 5 of 26 on llama.cpp, using a download
 
 ## Submission 2: agent v6 on small Gemma
 
-- **Status:** zip built 2026-11-11, waiting for upload
+- **Status:** submitted by 2026-11-12; public score 0.01 (user report). Cause not yet known.
 - **Built by:** `agent_v6.py`; zip at `bench_runs/submission_v6/submission.zip`
 - **Purpose:** check whether the solver-plus-two-checks pipeline runs on Kaggle's real harness, and whether its home gain carries over.
 
@@ -85,9 +85,10 @@ On the 56 dev bugs that grade at home (seed 42): v1 7, v6 with the gate bug 9, v
 
 | | |
 |---|---|
-| Submitted | |
-| Public score | |
-| Errors | |
+| Submitted | 2026-11-11/12, `bench_runs/submission_v6/submission.zip` |
+| Public score | 0.01 (about 1 of 129; submission 1 got 6-7) |
+| Errors | none reported |
+| Note | Home predicted about 10/129 (0.08). Home gain over v1 was small anyway (3 seeds: 25 vs 22). Pure Kaggle slowness does not fully explain the drop: at the token rate v1 needs to keep 6 fixes (about 11 tok/s), v6 would keep about 4. Suspects: slow Kaggle prefill hurting four fresh contexts, Kaggle's SequentialAgent or `!include` working differently from home, or finalize not submitting. Cause unknown without Kaggle logs. |
 
 ## Submission 3 (candidate): agent v1 on 12B
 
