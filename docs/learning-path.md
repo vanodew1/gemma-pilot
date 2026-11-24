@@ -33,6 +33,9 @@ the famous "Illustrated Transformer" blog below, so the style matches.
    │ 1. agent =   │  the "robot" is a model emitting tool calls in a loop
    │    a model   │
    ├──────────────┤
+   │ 1b. why top  │  big brain (can't copy) vs smart harness (can copy)
+   │   agents win │
+   ├──────────────┤
    │ 2. inside    │  tokens + attention — how it "reads" a bug report
    │    the model │
    ├──────────────┤
@@ -95,6 +98,40 @@ runs action → result pasted back → model writes next action`, until it write
   "think → act → observe → repeat" loop your agent runs. Read §1–2 only.
 - 🔎 **Best exercise:** open one real transcript from your home harness and mark, line by line,
   which text the *model* wrote vs. which the *harness* pasted back. That split is the whole idea.
+
+---
+
+## Rung 1b — Why top agents score so well (and what we can copy)
+
+**Idea:** Top SWE-bench Verified scores (around 95–97% in Nov 2026) come from two things:
+1. **A huge model** (Claude-class, hundreds of times bigger than Gemma 12B). We **can't** copy this.
+2. **A smart harness**: the loop, tools and rules around the model. We **can** copy this.
+
+In our competition the harness matters most. Stronger teacher models in the same harness solved only
+about 4–5 more of 124 tasks, and 48 tasks were solved by no model. That's why the Kaggle top is only
+0.29 (Nov 2), not 0.95: small models, private repos, 12-hour limit. (Sources: `COMPETITION.md` §3, §6.)
+
+**What the top Kaggle teams do** (from `COMPETITION.md` §6):
+- **Thinking on.** Turning it off: 48 → 23 tasks solved. The biggest single lever.
+- **One agent.** An extra "analyzer" agent gained only 1 task.
+- **Hard tool-call cap**, and a prompt that forces an edit by about call 12.
+- **Copy exact names and error messages from the issue** when searching (same idea as our 80% pilot).
+- **Never edit tests**, check `git diff` before `submit_patch`, submit once an edit exists.
+- **Skip graph and semantic search**: no gain shown.
+
+**Explainer you make:** A two-column card. Left: "why Claude scores 95%" (size, test-time compute,
+coding training, tuned scaffold). Right: "what our Gemma agent copies" (the harness tips above), each
+with the score it added once we log it.
+
+**Study it with:**
+- 📄 [SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering](https://arxiv.org/abs/2405.15793)
+  — shows how the *tools you give the agent* change its score. Closest paper to our project.
+- 📖 Official Kaggle [Getting Started notebook](https://www.kaggle.com/code/ryanholbrook/getting-started-gemma-4-developer-agent)
+  — how the competition harness actually runs.
+- 📖 ["What took LB 0.12 → 0.24"](https://www.kaggle.com/code/hitarthjain0/gemma-4-agent-what-took-lb-0-12-0-24)
+  — the most direct how-to for this competition.
+- 🔎 **Best exercise:** start from the sample agent (about 0.08), add one tip at a time, and log the
+  score after each. That shows what really helps *and* gives the report its results table.
 
 ---
 
@@ -248,6 +285,7 @@ One rung per sitting. For each: you watch/read the resource → I teach it plain
 questions → we build its explainer → you check it off → next rung. Start = **Rung 1**.
 
 - [ ] Rung 1 — agent = model in a loop
+- [ ] Rung 1b — why top agents win (harness vs model size)
 - [ ] Rung 2 — tokens + attention
 - [ ] Rung 3 — small vs big
 - [ ] Rung 4 — LoRA
